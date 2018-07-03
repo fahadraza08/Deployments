@@ -18,7 +18,7 @@
     </taskdef>
 	
     <target name="deploy">
-      <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="../ApexClassPages" rollbackOnError="true" runAllTests="true" />
+      <sf:deploy username="${sf.username}" password="${sf.password}" sessionId="${sf.sessionId}" serverurl="${sf.serverurl}" maxPoll="${sf.maxPoll}" deployRoot="../ApexTrigger" rollbackOnError="true" runAllTests="true" />
       
     </target>
 
