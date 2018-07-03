@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>CPQ_ApprovalActionLinkInstructionForEmailResponse</members>
+        <members>CPQ_ApprovalRequestForQuote</members>
+        <members>CPQ_Approval_QuotationName</members>
+        <members>CPQ_Details</members>
+        <members>CPQ_HasBeenSubmittedForApproval</members>
+        <members>CPQ_QuotationOwner</members>
+        <members>CPQ_QuoteLinkInstruction</members>
+        <members>CPQ_TotalQuoteValue</members>
+        <members>CPQ_email_services</members>
+        <members>Cancelled_Opportunity</members>
+        <members>OppRecordtype</members>
+        <members>Opp_Recordtype</members>
+        <members>Opportunity_Edit</members>
+        <members>OpporunityUrl</members>
+        <members>Quote_ProposalAccount</members>
+        <members>Quote_ProposalUrl</members>
+        <name>CustomLabel</name>
+    </types>
+    <version>41.0</version>
+</Package>
