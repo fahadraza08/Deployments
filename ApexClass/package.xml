@@ -3,10 +3,6 @@
     <types>
         <members>APTS_OpportunityToProposalController</members>
         <members>APTS_OpportunityToProposalControllerTest</members>
-        <members>APTS_ProposalTriggerHandler</members>
-        <members>APTS_ProposalTriggerHelper</members>
-        <members>APTS_ProposalTriggerTest</members>
-        <members>TestUtility</members>
         <name>ApexClass</name>
     </types>
     <version>41.0</version>
