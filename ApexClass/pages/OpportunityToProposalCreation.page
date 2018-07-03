@@ -1,0 +1,218 @@
+<apex:page standardController="Opportunity" extensions="APTS_OpportunityToProposalController" id="Opp">
+<apex:sectionHeader title="{!$Label.Opportunity_Edit}" subtitle="New Opportunity" id="OppHeader"/>
+<apex:form id="OppForm">
+<apex:pageBlock title="Opportunity Edit" mode="edit" id="OppPBTitle">
+<apex:pageBlockButtons >
+<apex:commandButton value="Save & Create Quote" Action="{!save}"/>
+<apex:commandButton value="Reset" Action="{!reset}" immediate="true" html-formnovalidate="formnovalidate"/>
+<apex:commandButton Value="Cancel" Action="{!cancel}" immediate="true" html-formnovalidate="formnovalidate"/> 
+</apex:pageBlockButtons>
+
+
+<apex:pageBlockSection columns="2" title="Opportunity Information" rendered="{!IF(Opportunity.RecordTypeid== $Label.OppRecordtype || Opportunity.RecordTypeid=='',true,false)}">
+<apex:inputField value="{!Opportunity.name}"/>
+<apex:outputField value="{!Opportunity.RecordTypeId}" rendered="{!IF(Opportunity.RecordTypeid== $Label.OppRecordtype,true,false)}"/>
+<apex:inputField value="{!Opportunity.RecordTypeId}" rendered="{!IF(Opportunity.RecordTypeid=='',true,false)}" required="true"/>
+<apex:inputField value="{!Opportunity.Accountid}" required="true"/>
+<apex:inputField value="{!Opportunity.CurrencyIsoCode}"/>
+<apex:inputField value="{!Opportunity.End_User__c}" />
+<tr><td class="labelCol first ">Opportunity Owner</td>
+                    <td class="dataCol  first ">{!$User.FirstName} {!$User.LastName}</td> 
+                </tr>
+<apex:inputField value="{!Opportunity.CloseDate}"/>
+<apex:inputField value="{!Opportunity.BU_Code__c}" required="true"/>
+<apex:inputField value="{!Opportunity.Type}" required="true"/>
+<apex:pageBlockSectionItem >
+<apex:outputLabel >Opportunity Stage</apex:outputLabel>
+<apex:actionRegion >
+<apex:inputField value="{!Opportunity.StageName}" required="true" >
+<apex:actionSupport event="onchange" action="{!changeStageName}" rerender="probability,messages" />
+</apex:inputField>
+</apex:actionRegion>
+</apex:pageBlockSectionItem>
+
+<apex:inputField value="{!Opportunity.Industry__c}"/>
+<apex:inputField value="{!Opportunity.Probability}" id="probability"/>
+<apex:inputField value="{!Opportunity.Area__c}" required="true"/>
+<apex:inputField value="{!Opportunity.Verified__c}"/>
+<apex:inputField value="{!Opportunity.FES_Region__c}" required="true"/>
+<apex:inputField value="{!Opportunity.Finance_Verified__c}"/>
+<apex:inputField value="{!Opportunity.Territory__c}" required="true" />
+<apex:inputField value="{!Opportunity.Verified_Date__c}"/>
+<apex:inputField value="{!Opportunity.Opportunity_Country__c}" required="true"/>
+<apex:inputField value="{!Opportunity.Finance_Verified_Date__c}"/>
+<apex:inputField value="{!Opportunity.PSO_Region__c}"/>
+<apex:inputField value="{!Opportunity.Locked_Record__c}"/>
+<apex:inputField value="{!Opportunity.Contract_Entity__c}"/>
+<apex:inputField value="{!Opportunity.Contract_Requested__c}"/>
+<apex:inputField value="{!Opportunity.FES_Commission_Eligible__c}"/>
+<apex:inputField value="{!Opportunity.Consulting_SOW_Requested__c}"/>
+<apex:inputField value="{!Opportunity.Non_Commission__c}"/>
+<apex:inputField value="{!Opportunity.Contract_Request_Date__c}"/>
+<apex:inputField value="{!Opportunity.Forecast_Call__c}" required="true"/>
+<apex:inputField value="{!Opportunity.Nuclear_Compliance__c}"/>
+<apex:inputField value="{!Opportunity.CompositeBiddingPG__c}"/>
+<apex:inputField value="{!Opportunity.SW_License_Compliance__c}"/>
+<apex:inputField value="{!Opportunity.CompositePGOpportunity__c}"/>
+<apex:inputField value="{!Opportunity.Compliance_Value_Potential__c}"/>
+<apex:inputField value="{!Opportunity.ADMS__c}"/>
+<apex:inputField value="{!Opportunity.Compliance_Value_Actual__c}"/>
+<apex:inputField value="{!Opportunity.Forecast__c}"/>
+<apex:inputField value="{!Opportunity.NC_SPIFF_Eligible__c}"/>
+<apex:inputField value="{!Opportunity.BidType__c}"/>
+<apex:inputField value="{!Opportunity.Won_Date__c}"/>
+<apex:inputField value="{!Opportunity.Target_Opportunity__c}"/>
+<apex:inputField value="{!Opportunity.Network_Control_Lock__c}"/>
+<apex:inputField value="{!Opportunity.Budget__c}"/>
+<apex:inputField value="{!Opportunity.To_be_Consolidated__c}"/>
+<apex:inputField value="{!Opportunity.Microsoft_Enabled_Solution__c}"/>
+<apex:inputField value="{!Opportunity.Renewal_PO_Notice__c}"/>
+<apex:inputField value="{!Opportunity.Risk_Review_ID__c}"/>
+<apex:inputField value="{!Opportunity.Renewal_Quote_Notice__c}"/>
+<apex:inputField value="{!Opportunity.BU_Risk_Review_Date__c}"/>
+<apex:inputField value="{!Opportunity.Collections_Notes__c}"/>
+<apex:inputField value="{!Opportunity.Div_Risk_Review_Date__c}"/>
+<apex:inputField value="{!Opportunity.Net_Margin__c}"/>
+<apex:inputField value="{!Opportunity.Agreement__c}"/>
+<apex:inputField value="{!Opportunity.Opportunity_Value__c}"/>
+<apex:inputField value="{!Opportunity.Parent_Opportunity__c}"/>
+<apex:inputField value="{!Opportunity.Primary_Contact__c}"/>
+<apex:inputField value="{!Opportunity.Opportunity_Description__c}"/>
+<apex:inputField value="{!Opportunity.Status__c}"/>
+<apex:inputField value="{!Opportunity.Next_Steps__c}"/>
+</apex:pageBlockSection>
+ 
+<apex:pageBlockSection columns="2" title="Opportunity Information" rendered="{!IF(Opportunity.RecordTypeid== $Label.Cancelled_Opportunity,true,false)}">
+<apex:inputField value="{!Opportunity.name}"/>
+<apex:inputField value="{!Opportunity.CurrencyIsoCode}"/>
+<apex:inputField value="{!Opportunity.Accountid}" required="true"/>
+<apex:outputField value="{!Opportunity.RecordTypeId}"/>
+<apex:inputField value="{!Opportunity.End_User__c}"/>
+<apex:inputField value="{!Opportunity.Cancellation_Type__c}"/>
+<tr><td class="labelCol first ">Opportunity Owner</td>
+<td class="dataCol  first ">{!$User.FirstName} {!$User.LastName}</td> </tr>
+<apex:inputField value="{!Opportunity.Parent_Opportunity__c}"/>
+<apex:inputField value="{!Opportunity.Type}" required="true"/>
+<apex:inputField value="{!Opportunity.CloseDate}"/>
+<apex:inputField value="{!Opportunity.Industry__c}"/>
+<apex:inputField value="{!Opportunity.BU_Code__c}" required="true"/>
+<apex:inputField value="{!Opportunity.Area__c}" required="true"/>
+<apex:pageBlockSectionItem >
+<apex:outputLabel >Opportunity Stage</apex:outputLabel>
+<apex:actionRegion >
+<apex:inputField value="{!Opportunity.StageName}" required="true" >
+<apex:actionSupport event="onchange" action="{!changeStageName}" rerender="probability,messages" />
+</apex:inputField>
+</apex:actionRegion>
+</apex:pageBlockSectionItem>
+<apex:inputField value="{!Opportunity.FES_Region__c}" required="true"/>
+<apex:inputField value="{!Opportunity.Selling_Status__c}"/>
+<apex:inputField value="{!Opportunity.Territory__c}" required="true"/>
+<apex:inputField value="{!Opportunity.Selling_Status_Date__c}"/>
+<apex:inputField value="{!Opportunity.Opportunity_Country__c}" required="true"/>
+<apex:inputField value="{!Opportunity.Probability}" required="true" id="probability"/>
+<apex:inputField value="{!Opportunity.PSO_Region__c}"/>
+<apex:inputField value="{!Opportunity.Verified__c}"/>
+<apex:inputField value="{!Opportunity.Finance_Verified__c}"/>
+<apex:inputField value="{!Opportunity.Capture_Team_Assigned__c}"/>
+<apex:inputField value="{!Opportunity.Contract_Entity__c}"/>
+<apex:inputField value="{!Opportunity.Contract_Requested__c}"/>
+<apex:inputField value="{!Opportunity.FES_Commission_Eligible__c}"/>
+<apex:inputField value="{!Opportunity.Contract_Request_Date__c}"/>
+<apex:inputField value="{!Opportunity.Non_Commission__c}"/>
+<apex:inputField value="{!Opportunity.Nuclear_Compliance__c}"/>
+<apex:inputField value="{!Opportunity.Forecast_Call__c}" required="true"/>
+<apex:inputField value="{!Opportunity.SW_License_Compliance__c}"/>
+<apex:inputField value="{!Opportunity.Forecast__c}"/>
+<apex:inputField value="{!Opportunity.Compliance_Value_Potential__c}"/>
+<apex:inputField value="{!Opportunity.BidType__c}"/>
+<apex:inputField value="{!Opportunity.Compliance_Value_Actual__c}"/>
+<apex:inputField value="{!Opportunity.Target_Opportunity__c}"/>
+<apex:inputField value="{!Opportunity.NC_SPIFF_Eligible__c}"/>
+<apex:inputField value="{!Opportunity.Budget__c}"/>
+<apex:inputField value="{!Opportunity.OLM_Opportunity__c}"/>
+<apex:inputField value="{!Opportunity.Risk_Review_ID__c}"/>
+<apex:inputField value="{!Opportunity.Verified_Date__c}"/>
+<apex:inputField value="{!Opportunity.BU_Risk_Review_Date__c}"/>
+<apex:inputField value="{!Opportunity.Finance_Verified_Date__c}"/>
+<apex:inputField value="{!Opportunity.Div_Risk_Review_Date__c}"/>
+<apex:inputField value="{!Opportunity.Locked_Record__c}"/>
+<apex:inputField value="{!Opportunity.Won_Date__c}"/>
+<apex:inputField value="{!Opportunity.Agreement__c}"/>
+<apex:inputField value="{!Opportunity.Network_Control_Lock__c}"/>
+<apex:inputField value="{!Opportunity.Net_Margin__c}"/>
+<apex:inputField value="{!Opportunity.Opportunity_Value__c}"/>
+<apex:inputField value="{!Opportunity.Primary_Contact__c}"/>
+<apex:inputField value="{!Opportunity.ABB_Location__c}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Professional Services" columns="2" rendered="{!IF(Opportunity.RecordTypeid== $Label.OppRecordtype || Opportunity.RecordTypeid=='',true,false)}">
+<apex:inputField value="{!Opportunity.Consulting_SOW_Request_Date__c}"/>
+<apex:inputField value="{!Opportunity.PSO_Owner__c}"/>
+<apex:inputField value="{!Opportunity.Required_Action_Due_Date__c}"/>
+<apex:inputField value="{!Opportunity.PSOLead__c}"/>
+<apex:inputField value="{!Opportunity.Consulting_Pipeline__c}"/>
+<apex:inputField value="{!Opportunity.PSO_Months__c}"/>
+<apex:inputField value="{!Opportunity.PSO_Program__c}"/>
+<apex:inputField value="{!Opportunity.SOW_Reference__c}"/>
+<apex:inputField value="{!Opportunity.PSO_Upsell__c}"/>
+<apex:inputField value="{!Opportunity.Consulting_Revenue_Status__c}"/>
+<apex:inputField value="{!Opportunity.Project_Description__c}"/>
+<apex:inputField value="{!Opportunity.Required_Action__c}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="PSA Data">
+<apex:inputField value="{!Opportunity.pse__Is_Services_Opportunity__c}"/>
+<apex:inputField value="{!Opportunity.pse__Region__c}" rendered="{!IF(Opportunity.RecordTypeid== $Label.OppRecordtype || Opportunity.RecordTypeid=='',true,false)}"/>
+<apex:inputField value="{!Opportunity.Legacy_Opportunity_Owner__c}" rendered="{!IF(Opportunity.RecordTypeid== $Label.Cancelled_Opportunity,true,false)}"/>
+<apex:inputField value="{!Opportunity.IntegrationID__c}" rendered="{!IF(Opportunity.RecordTypeid== $Label.Cancelled_Opportunity,true,false)}"/>
+<apex:inputField value="{!Opportunity.RTU_Only__c}" rendered="{!IF(Opportunity.RecordTypeid== $Label.Cancelled_Opportunity,true,false)}"/>
+</apex:pageBlockSection> 
+
+
+<apex:pageBlockSection title="ABB Supply Entities" rendered="{!IF(Opportunity.RecordTypeid== $Label.OppRecordtype || Opportunity.RecordTypeid=='',true,false)}">
+<apex:inputField value="{!Opportunity.Supply_Entity_1__c}"/>
+<apex:inputField value="{!Opportunity.Supply_Entity_2__c}"/>
+<apex:inputField value="{!Opportunity.PSO_Service_Center__c}"/>
+</apex:pageBlockSection> 
+
+
+<apex:pageBlockSection title="LEGAL (For Legal Use ONLY)" columns="2">
+<apex:inputField value="{!Opportunity.Contract_Status__c }"/>
+<apex:inputField value="{!Opportunity.Legal_Status_Date__c }"/>
+<apex:inputField value="{!Opportunity.Legal_Status_Legal_Next_Steps__c }"/>
+<apex:inputField value="{!Opportunity.Legal_Assignment__c }"/>
+</apex:pageBlockSection> 
+
+
+<apex:pageBlockSection title="Win Loss Information" columns="2" rendered="{!IF(Opportunity.RecordTypeid== $Label.OppRecordtype || Opportunity.RecordTypeid=='',true,false)}">
+<apex:inputField value="{!Opportunity.Winner__c}"/>
+<apex:inputField value="{!Opportunity.If__c}"/>
+<apex:inputField value="{!Opportunity.Win_Loss_Not_Pursued_Reason_Category__c}"/>
+<apex:inputField value="{!Opportunity.Win_Loss_Not_Pursued_Reason_Detail__c}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Lead Information" columns="2" rendered="{!IF(Opportunity.RecordTypeid== $Label.OppRecordtype || Opportunity.RecordTypeid=='',true,false)}">
+<apex:inputField value="{!Opportunity.CampaignId}"/>
+<apex:inputField value="{!Opportunity.LeadSource}"/>
+<apex:inputField value="{!Opportunity.MDR_Owners__c}"/>
+<apex:inputField value="{!Opportunity.Lead_Sub_Source__c}"/>
+<apex:inputField value="{!Opportunity.Referred_By__c}"/>
+<apex:inputField value="{!Opportunity.ReferredByDate__c}"/>
+<apex:inputField value="{!Opportunity.If_Other_List_Driver__c}"/>
+<apex:inputField value="{!Opportunity.Lead_Notes__c}"/>
+<apex:inputField value="{!Opportunity.IntegrationID__c}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Opportunity Screening Gates 1 and 2 Information" columns="2" rendered="{!IF(Opportunity.RecordTypeid== $Label.OppRecordtype || Opportunity.RecordTypeid=='',true,false)}">
+<apex:inputField value="{!Opportunity.Opportunity_Qualification_Status__c}"/>
+<apex:inputField value="{!Opportunity.ABB_Location__c}"/>
+<apex:inputField value="{!Opportunity.Opportunity_Screening_Gate_2_Status__c}"/>
+<apex:inputField value="{!Opportunity.Local_Business_Unit__c}"/>
+<apex:inputField value="{!Opportunity.Opportunity_Screening_Gate_3_Status__c}"/>
+<apex:inputField value="{!Opportunity.Local_Product_Group__c}"/>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>
