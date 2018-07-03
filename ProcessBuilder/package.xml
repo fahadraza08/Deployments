@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Approval_Status_field_Update-2</members>
+        <members>Auto_Update_the_price_book_in_Opportunity-1</members>
+        <members>LineItemPicklistUpdateCPQ-20</members>
+        <members>Set_Approval_Status_field_in_Quotation-6</members>
+        <members>To_populate_account_field_while_creating_Quote_from_opportunity-5</members>
+        <members>Update_currency_Iso_code_in_proposal-1</members>
+        <name>Flow</name>
+    </types>
+    <version>41.0</version>
+</Package>
