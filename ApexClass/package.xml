@@ -9,5 +9,9 @@
         <members>TestUtility</members>
         <name>ApexClass</name>
     </types>
+	<types>
+        <members>OpportunityToProposalCreation</members>
+        <name>ApexPage</name>
+    </types>
     <version>41.0</version>
 </Package>
