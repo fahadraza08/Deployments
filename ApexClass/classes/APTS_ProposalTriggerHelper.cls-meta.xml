@@ -4,7 +4,6 @@
     <packageVersions>
         <majorNumber>10</majorNumber>
         <minorNumber>1403</minorNumber>
-		<minorNumber>25</minorNumber>
         <namespace>Apttus_Config2</namespace>
     </packageVersions>
     <packageVersions>
