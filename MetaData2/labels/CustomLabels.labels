@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CPQ_ApprovalActionLinkInstructionForEmailResponse</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQ ApprovalActionLinkInstructionForEmailResponse</shortDescription>
+        <value>To approve or reject this request, follow the links below or reply to this email with the word APPROVE, APPROVED, YES, REJECT, REJECTED, or NO in the first line of the email message.</value>
+    </labels>
+    <labels>
+        <fullName>CPQ_ApprovalRequestForQuote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQ ApprovalRequestForQuote</shortDescription>
+        <value>Approval Request for Quote</value>
+    </labels>
+    <labels>
+        <fullName>CPQ_Approval_QuotationName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQ Approval QuotationName</shortDescription>
+        <value>Quote Name</value>
+    </labels>
+    <labels>
+        <fullName>CPQ_Details</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQ Details</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>CPQ_HasBeenSubmittedForApproval</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQ HasBeenSubmittedForApproval</shortDescription>
+        <value>has been submitted for your approval.</value>
+    </labels>
+    <labels>
+        <fullName>CPQ_QuotationOwner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQ QuotationOwner</shortDescription>
+        <value>Quote Owner</value>
+    </labels>
+    <labels>
+        <fullName>CPQ_QuoteLinkInstruction</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQ QuoteLinkInstruction</shortDescription>
+        <value>Click on the link below to access the Quote</value>
+    </labels>
+    <labels>
+        <fullName>CPQ_TotalQuoteValue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQ TotalQuoteValue</shortDescription>
+        <value>Total Quote Value</value>
+    </labels>
+    <labels>
+        <fullName>CPQ_email_services</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CPQ email services</shortDescription>
+        <value>approvalreplyservice@f-riaho6fdvzlpeyousa3uu3zxrxxcdtpvtqjjll7f2slgmr03e.18-cposeac.cs23.apex.sandbox.salesforce.com</value>
+    </labels>
+    <labels>
+        <fullName>Cancelled_Opportunity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancelled Opportunity</shortDescription>
+        <value>012600000001EYd</value>
+    </labels>
+    <labels>
+        <fullName>OppRecordtype</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OppRecordtype</shortDescription>
+        <value>0126000000054Ua</value>
+    </labels>
+    <labels>
+        <fullName>Opp_Recordtype</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opp Recordtype</shortDescription>
+        <value>Operations Opportunity Record Type</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Edit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Edit</shortDescription>
+        <value>Opportunity Edit</value>
+    </labels>
+    <labels>
+        <fullName>OpporunityUrl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OpporunityUrl</shortDescription>
+        <value>/006/o</value>
+    </labels>
+    <labels>
+        <fullName>Quote_ProposalAccount</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote/ProposalAccount</shortDescription>
+        <value>&amp;CF00N18000000ySLq=</value>
+    </labels>
+    <labels>
+        <fullName>Quote_ProposalUrl</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote/ProposalUrl</shortDescription>
+        <value>/aCS/e?CF00N18000000ySM2=</value>
+    </labels>
+</CustomLabels>
