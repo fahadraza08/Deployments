@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Apttus_Config2__ProductAttributeValue__c.ESS_Use_Named_User__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.Customer_Funded_Development__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.Limited_Use_Named_User__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.Full_Use_Named_User__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.Quantity__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.License_Metric_Customer_Count__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.Named_Users__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.MW_of_Generation__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.GWh_of_Retail__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.Tenancy__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.Load_Zones__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.Megawatts__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.License_Metric_MineScape__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.Number_of_Assets__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.Revenue_Stream__c</members>
+         <members>Apttus_Config2__ProductAttributeValue__c.Contract_Type__c</members>
+		 <members>Apttus_Config2__ProductAttributeValue__c.Revenue_Stream_Type__c</members>
+		 <members>Apttus_Config2__ProductAttributeValue__c.End_Date__c</members>
+		 <members>Apttus_Config2__ProductAttributeValue__c.Start_Date__c</members>
+		 <members>Apttus_Config2__ProductAttributeValue__c.Revenue_Stream_Sub_Type__c</members>
+		 <members>Apttus_Config2__ProductAttributeValue__c.Calculated_Price__c</members>		
+		 <members>Apttus_Config2__ProductAttributeValue__c.Portfolio_Optimization_Type__c</members>		
+		 <members>Apttus_Config2__ProductAttributeValue__c.Sites_Deployed__c</members>
+
+		 
+		 
+		 <members>Apttus_Config2__LineItem__c.X3rd_Party_Cost_Value__c</members>
+	     <members>Apttus_Config2__LineItem__c.Contract_Type__c</members>
+         <members>Apttus_Config2__LineItem__c.ESS_Use_Named_User__c</members>
+         <members>Apttus_Config2__LineItem__c.Full_Use_Named_User__c</members>
+		 <members>Apttus_Config2__LineItem__c.GWh_of_Retail__c</members>
+         <members>Apttus_Config2__LineItem__c.JIC__c</members>
+		 <members>Apttus_Config2__LineItem__c.License_Driver__c</members>
+		 <members>Apttus_Config2__LineItem__c.License_Driver_Formula__c</members>
+		 <members>Apttus_Config2__LineItem__c.Limited_Use_Named_User__c</members>
+		  <members>Apttus_Config2__LineItem__c.MW_of_Generation__c</members>
+		 <members>Apttus_Config2__LineItem__c.Margin__c</members>
+		 <members>Apttus_Config2__LineItem__c.Override_Cost__c</members>
+		 <members>Apttus_Config2__LineItem__c.Pricing_Factor__c</members>
+		 <members>Apttus_Config2__LineItem__c.Revenue_Stream__c</members>
+		 <members>Apttus_Config2__LineItem__c.Revenue_Stream_Sub_Type__c</members>
+		 <members>Apttus_Config2__LineItem__c.License_Metric_MineScape__c</members>
+		 <members>Apttus_Config2__LineItem__c.Revenue_Stream_Type__c</members>
+		 <members>Apttus_Config2__LineItem__c.Tenancy__c</members>
+		 <members>Apttus_Config2__LineItem__c.Start_Date__c</members>
+		 <members>Apttus_Config2__LineItem__c.End_Date__c</members>
+		 <members>Apttus_Config2__LineItem__c.Cost3__c</members>
+	
+	     <members>Apttus_Proposal__Proposal_Line_Item__c.Contract_Type__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Cost2__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.End_Date__c</members>
+	     <members>Apttus_Proposal__Proposal_Line_Item__c.ESS_Use_Named_User__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Full_Use_Named_User__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.GWh_of_Retail__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.License_Driver__c</members> 
+	     <members>Apttus_Proposal__Proposal_Line_Item__c.License_Metric_MineScape__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Limited_Use_Named_User__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.MW_of_Generation__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Non_Standard_License_Metric__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Non_Standard_License_Metric_Pic_Val__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Revenue_Stream__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Revenue_Stream_Sub_Type__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Revenue_Stream_Type__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Start_Date__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Tenancy__c</members>
+		
+		 
+		 <members>Apttus_Config2__PriceListItem__c.X3rd_Party_Cost__c</members>
+		 <members>Apttus_Config2__PriceListItem__c.X3rd_Party_Base_Cost__c</members>
+		 <members>Apttus_Config2__PriceListItem__c.X3rd_Party_Per_User_Cost__c</members>
+		 <members>Apttus_Config2__PriceListItem__c.Base_Fee__c</members>
+		 <members>Apttus_Config2__PriceListItem__c.Level_1__c</members>
+		 <members>Apttus_Config2__PriceListItem__c.External_ID__c</members>
+		 <members>Apttus_Config2__PriceListItem__c.Level_1__c</members>
+		 <members>Apttus_Config2__PriceListItem__c.Level_2__c</members>
+		 <members>Apttus_Config2__PriceListItem__c.Level_3__c</members>
+		 <members>Apttus_Config2__PriceListItem__c.Override_Cost__c</members>
+		 <members>Apttus_Config2__PriceListItem__c.Pricing_Factor__c</members>
+		 <members>Apttus_Config2__PriceListItem__c.X3rd_Party_Per_User_Mtnc_Cost__c</members>
+	     <members>Apttus_Config2__PriceListItem__c.X3rd_Party_Mtnc_Base_Cost__c</members>
+		 <members>Apttus_Config2__PriceListItem__c.X3rd_Party_Mtnc_Cost__c</members>
+					 
+		 
+		 
+         <members>Apttus_Proposal__Proposal__c.Expiry_Date__c</members> 
+         <members>Apttus_Proposal__Proposal__c.Price_Hold_Future_Discount__c</members> 
+         <members>Apttus_Proposal__Proposal__c.Primary_Product_Line__c</members> 
+         <members>Apttus_Proposal__Proposal__c.ProposalType__c</members> 
+         <members>Apttus_Proposal__Proposal__c.Quote_Description__c</members> 
+         <members>Apttus_Proposal__Proposal__c.ServiceSectiononproposal__c</members> 
+         <members>Apttus_Proposal__Proposal__c.SoftwareSection__c</members> 
+     
+	    <members>Apttus_Config2__AttributeValueMatrixEntry__c.Contract_Type__c</members>
+		<members>Apttus_Config2__AttributeValueMatrixEntry__c.Revenue_Stream__c</members>
+		<members>Apttus_Config2__AttributeValueMatrixEntry__c.Revenue_Stream_Sub_Type__c</members>
+	    <members>Apttus_Config2__AttributeValueMatrixEntry__c.Revenue_Stream_Type__c</members>
+		
+		 <members>Apttus_Config2__ProductGroup__c.External_ID__c</members>
+         <members>Apttus_Config2__PriceDimension__c.External_Id__c</members>
+	     <members>Apttus_Config2__PriceList__c.External_ID__c</members>	 
+	     <members>Apttus_Config2__PriceRuleset__c.External_Id__c</members>	 
+		 <members>Apttus_Config2__ProductAttributeGroup__c.External_ID__c</members>
+		 <members>Apttus_Config2__ProductAttributeRule__c.External_Id__c</members>	 
+		 <members>Apttus_Config2__ClassificationName__c.External_ID__c</members>	 
+         <members>Apttus_Config2__ClassificationHierarchy__c.External_ID__c</members>	 
+         <members>Apttus_Config2__ProductOptionGroup__c.External_ID__c</members>	 
+         <members>Apttus_Config2__ConstraintRule__c.External_ID__c</members>
+		 <members>Apttus_Config2__PriceMatrix__c.External_Id__c</members>
+         <members>Apttus_Config2__ConstraintRule__c.External_ID__c</members>	
+		 <members>Apttus_Config2__FieldExpression__c.External_ID__c</members>	 		 
+		 <members>Apttus_Config2__PriceRule__c.External_Id__c</members>		
+       
+          <members>Product2.Exclude_C_01_approval__c</members>
+		  <members>Product2.Exclude_in_CPQ_Approval__c</members>
+		  <members>Product2.Exclude_on_Proposal_output__c</members>
+		  <members>Product2.Unique_Identifier__c</members> 
+
+
+    
+         <members>Apttus_Proposal__Proposal_Line_Item__c.Term__c</members>		
+         <members>Apttus_Proposal__Proposal_Line_Item__c.Product_Name__c</members>
+         <members>Apttus_Proposal__Proposal_Line_Item__c.Exclude_on_Proposal_output__c</members>	
+         <members>Apttus_Proposal__Proposal_Line_Item__c.Maintenance_percentage__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Net_Price_Template__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Quantity_for_Template__c</members>
+		 <members>Apttus_Proposal__Proposal_Line_Item__c.Extended_Base_Price__c</members>
+		 
+         <members>Apttus_Proposal__Proposal__c.currency_Symbol_for_Template__c</members> 
+         <members>Apttus_Proposal__Proposal__c.Configure_Products_Flow__c</members> 
+         <members>Apttus_Proposal__Proposal__c.Document_Generated_Date__c</members> 
+         <members>Apttus_Proposal__Proposal__c.Generate__c</members> 
+         <members>Apttus_Proposal__Proposal__c.Opportunity_Currency__c</members>
+         <members>Apttus_Proposal__Proposal__c.Present_Custom__c</members>  
+         <members>Apttus_Proposal__Proposal__c.Total_Customer_Price__c</members> 
+         <members>Apttus_Proposal__Proposal__c.Total_Net_Price_for_Consulting__c</members> 
+         <members>Apttus_Proposal__Proposal__c.Total_Net_Price_for_Consulting_Managed_S__c</members>
+		
+		 <members>Apttus_Proposal__Proposal__c.Total_Net_Price_for_Maintenance__c</members>
+		 <members>Apttus_Proposal__Proposal__c.Total_Net_Price_for_Managed_Services__c</members>
+		 <members>Apttus_Proposal__Proposal__c.Total_Quote_PSO_Fees__c</members>
+		 <members>Apttus_Proposal__Proposal__c.Total_Net_Price_for_Saas__c</members>
+		 <members>Apttus_Proposal__Proposal__c.Total_Net_Price_for_License__c</members>
+		 <members>Apttus_Proposal__Proposal__c.Configure_Products_Read_Only__c</members> 
+         <members>Apttus_Proposal__Proposal__c.currency_symbol_for_euro__c</members> 
+		 <members>Apttus_Proposal__Proposal__c.currency_Symbol_for_Template__c</members> 
+		 <members>Apttus_Proposal__Proposal__c.Configure_Flow__c</members>	
+         <members>Apttus_Proposal__Proposal__c.Net_Price_For_Hardware__c</members> 
+		  <members>Apttus_Proposal__Proposal__c.Total_Net_Price_Software_section__c</members>
+		  <members>Apttus_Proposal__Proposal__c.Total_Net_Price_Software_section1__c</members>
+		 
+		 
+         <members>Apttus_Config2__LineItem__c.Contract_Type_Formula__c</members>
+         <members>Apttus_Config2__LineItem__c.Product_Cost__c</members>
+	     <members>Apttus_Config2__LineItem__c.Cost2__c</members>
+		 <members>Apttus_Config2__LineItem__c.CPQ_Cost__c</members>
+		 <members>Apttus_Config2__LineItem__c.ESS_Use_Named_User_Formula__c</members>
+		 <members>Apttus_Config2__LineItem__c.Full_Use_Named_User_Formula__c</members>
+		 <members>Apttus_Config2__LineItem__c.GWh_of_Retail_Formula__c</members>
+		 <members>Apttus_Config2__LineItem__c.License_Metric_MineScape_formula__c</members>
+	     <members>Apttus_Config2__LineItem__c.Limited_Use_Named_User_Formula__c</members>
+		 <members>Apttus_Config2__LineItem__c.MW_of_Generation_Formula__c</members>
+         <members>Apttus_Config2__LineItem__c.Revenue_Stream_Formula__c</members>
+		 <members>Apttus_Config2__LineItem__c.Revenue_Stream_Sub_Type_Formula__c</members>
+		 <members>Apttus_Config2__LineItem__c.Revenue_Stream_Type_Formula__c</members>
+		 <members>Apttus_Config2__LineItem__c.Tech_Soft_3D_Hoops_Cost__c</members>
+		 <members>Apttus_Config2__LineItem__c.Tenancy_formula__c</members>
+		 <members>Apttus_Config2__LineItem__c.X3rd_Party_License_Cost__c</members>
+		 <members>Apttus_Config2__LineItem__c.X3rd_Party_Mtnc_Cost_Value__c</members>
+		 <members>Apttus_Config2__LineItem__c.X3rd_Party_Mtnc_Cost__c</members>
+	    
+		
+		 <members>Apttus_Config2__ProductAttributeValue__c.Calculated_Price_Formula__c</members>
+		 
+		 <members>Apttus_Config2__PriceListItem__c.Product_Id__c</members>
+		  
+			 <name>CustomField</name>
+    </types>
+    <types>
+        <members>ABB Integration User</members>
+        <members>ABB Integration User</members>
+        <members>ABB Proposal User</members>
+        <members>Admin</members>
+        <members>BR Partner Client</members>
+        <members>Customer Portal Test Profile</members>
+        <members>Delegated Admin</members>
+        <members>Download Only Customer Portal User</members>
+        <members>Gold Partner User</members>
+        <members>ICG ServiceDesk Internal Client</members>
+        <members>ICG Standard User with No Delete Ability</members>
+        <members>MarketingProfile</members>
+        <members>Network Control EMEA CA</members>
+        <members>NetworkControl US PSO</members>
+        <members>Opportunity Product No edit test profile</members>
+        <members>PSE - Consultant</members>
+        <members>PSE - Consultant (Standard User)</members>
+        <members>PSE - Finance</members>
+        <members>PSE - Finance (Standard User)</members>
+        <members>PSE - Management</members>
+        <members>PSE - Management (Standard User)</members>
+        <members>PSE - Sales</members>
+        <members>PSE - Sales (Platform User)</members>
+        <members>Premier Support User</members>
+        <members>ROI Read Only User</members>
+        <members>ReadOnly</members>
+        <members>RemedyForce System API Only</members>
+        <members>Remedyforce System Administrator</members>
+        <members>ServiceDesk Change Manager</members>
+        <members>ServiceDesk Client</members>
+        <members>ServiceDesk Dashboard</members>
+        <members>ServiceDesk Staff</members>
+        <members>SolutionManager</members>
+        <members>Standard</members>
+        <members>Standard Sales Executive User</members>
+        <members>Standard Sales Manager User</members>
+        <members>StandardAul</members>
+        <members>Test - Partner Portal Profile</members>
+        <members>Test Partner Ext Sales</members>
+        <members>Test Profile for Sunny</members>
+        <members>Ventyx - Greg Toothaker</members>
+        <members>Ventyx - Stephanie Moss</members>
+        <members>Ventyx Advisors Users with No Delete Ability</members>
+        <members>Ventyx Customer Community User</members>
+        <members>Ventyx Customer Portal Admin with No Delete</members>
+        <members>Ventyx Customer Portal Read Only Test</members>
+        <members>Ventyx DataMig System Administrator</members>
+        <members>Ventyx Energy Australia ServiceDesk External Client</members>
+        <members>Ventyx Finance%2FAccounting</members>
+        <members>Ventyx Finance%2FAccounting w%2Fno Delete</members>
+        <members>Ventyx Finance%2FAccounting w%2Fno Delete %26 T1 Approver</members>
+        <members>Ventyx Finance%2FAccounting with Manage Reports</members>
+        <members>Ventyx Finance%2Faccounting%2Fno create%28Test%29</members>
+        <members>Ventyx GCS Content User</members>
+        <members>Ventyx GCS Customer Portal Admin with No Delete</members>
+        <members>Ventyx GCS Ideas Admin User</members>
+        <members>Ventyx GCS Manager</members>
+        <members>Ventyx GCS Manager w%2F Content %26 Manage User Permission</members>
+        <members>Ventyx GCS Manager w%2FOpportunity Edit Rights</members>
+        <members>Ventyx GCS Release Delivery</members>
+        <members>Ventyx GCS Solution Manager</members>
+        <members>Ventyx GCS TSE</members>
+        <members>Ventyx GCS User</members>
+        <members>Ventyx GMS Application Support</members>
+        <members>Ventyx Ideas User with No Delete Ability</members>
+        <members>Ventyx Lead Creator</members>
+        <members>Ventyx Legal User</members>
+        <members>Ventyx Legal User &amp; T1 Approver</members>
+        <members>Ventyx Marketing User</members>
+        <members>Ventyx Marketing User with Report Rights</members>
+        <members>Ventyx Network Control Employees</members>
+        <members>Ventyx PSO User</members>
+        <members>Ventyx PSO User with Dealmaker</members>
+        <members>Ventyx PSO%2FSales User w%2FDB%2C DM%2C Ideas %26 T1 Approver</members>
+        <members>Ventyx PSO%2FSales User w%2FDashboard%2C Dealmaker %26 Ideas</members>
+        <members>Ventyx Performance Test Profile</members>
+        <members>Ventyx Proposal User with Dealmaker</members>
+        <members>Ventyx Read Only User</members>
+        <members>Ventyx Read Only with no access to Opportunities</members>
+        <members>Ventyx Remedyforce System Administrator</members>
+        <members>Ventyx Renewals &amp; Proposals</members>
+        <members>Ventyx Sales Management User with Dealmaker</members>
+        <members>Ventyx Sales Ops Management</members>
+        <members>Ventyx Sales User w%2Fno Delete w%2FDM %26 T1 Approver</members>
+        <members>Ventyx Sales User with No Delete &amp; with Dealmaker</members>
+        <members>Ventyx ServiceDesk Change Manager</members>
+        <members>Ventyx ServiceDesk External Client</members>
+        <members>Ventyx ServiceDesk Internal Client</members>
+        <members>Ventyx ServiceDesk Staff</members>
+        <members>Ventyx Standard Platform User</members>
+        <members>Ventyx Standard User No Delete &amp; PMO</members>
+        <members>Ventyx Standard User w%2Fno delete %26 T1 Approver</members>
+        <members>Ventyx Standard User w%2FNo Delete  %26 T1 Approver</members>
+        <members>Ventyx Standard User with Dashboard Rights &amp; with Dealmaker</members>
+        <members>Ventyx Standard User w%2Fno delete %26 T1 Approver</members>
+        <members>Ventyx Standard User with No Delete Ability</members>
+        <members>Ventyx Standard User with No Delete Ability and Commisions</members>
+        <members>Ventyx Standard User with No Delete Ability and Commisions Tammy Rountree</members>
+        <members>Ventyx System Administrator</members>
+        <members>Ventyx System Administrator</members>
+        <members>Ventyx System Administrator - GCS</members>
+        <members>Ventyx System Integration</members>
+        <members>Ventyx System Profile</members>
+        <members>Ventyx nMarket GCS Manager w%2F Content</members>
+        <members>Xactly Integration</members>
+        <name>Profile</name>
+    </types>
+    <version>41.0</version>
+</Package>

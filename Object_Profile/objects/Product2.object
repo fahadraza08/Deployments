@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Exclude_C_01_approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for Approvals when this field is checked then this product should not trigger approvals</description>
+        <externalId>false</externalId>
+        <label>Exclude C-01 approval</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Exclude_in_CPQ_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, product will not be included in CPQ approvals.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, product will not be included in CPQ approvals.</inlineHelpText>
+        <label>Exclude in CPQ Approval</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Exclude_on_Proposal_output__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Exclude on Proposal output ?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Unique_Identifier__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Unique Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+</CustomObject>

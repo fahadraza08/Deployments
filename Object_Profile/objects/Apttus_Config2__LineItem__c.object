@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <fields>
+        <fullName>CPQ_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>Cost2__c +  X3rd_Party_Cost_Value__c  + Product_Cost__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CPQ Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Type_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Apttus_Config2__AttributeValueId__r.Contract_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contract Type Formula</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Perpetual</fullName>
+                    <default>false</default>
+                    <label>Perpetual</label>
+                </value>
+                <value>
+                    <fullName>Subscription</fullName>
+                    <default>false</default>
+                    <label>Subscription</label>
+                </value>
+                <value>
+                    <fullName>Time &amp; Materials</fullName>
+                    <default>false</default>
+                    <label>Time &amp; Materials</label>
+                </value>
+                <value>
+                    <fullName>Fixed Price</fullName>
+                    <default>false</default>
+                    <label>Fixed Price</label>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Reinstatement</fullName>
+                    <default>false</default>
+                    <label>Reinstatement</label>
+                </value>
+                <value>
+                    <fullName>Projects</fullName>
+                    <default>false</default>
+                    <label>Projects</label>
+                </value>
+                <value>
+                    <fullName>New Support Package</fullName>
+                    <default>false</default>
+                    <label>New Support Package</label>
+                </value>
+                <value>
+                    <fullName>Services</fullName>
+                    <default>false</default>
+                    <label>Services</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cost2__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL( Apttus_Config2__LineType__c,&apos;Option&apos;), Apttus_Config2__NetPrice__c ,IF(ISPICKVAL( Apttus_Config2__LineType__c,&apos;Product/Service&apos;), Apttus_Config2__OptionPrice__c ,0))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cost2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cost3__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Apttus_Config2__PriceListItemId__r.X3rd_Party_Cost__c * Apttus_Config2__NetPrice__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cost3</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ESS_Use_Named_User_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apttus_Config2__AttributeValueId__r.ESS_Use_Named_User__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ESS Use Named User Formula</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ESS_Use_Named_User__c</fullName>
+        <externalId>false</externalId>
+        <label>ESS Use Named User</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apttus_Config2__AttributeValueId__r.End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Full_Use_Named_User_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apttus_Config2__AttributeValueId__r.Full_Use_Named_User__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Full Use Named User Formula</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Full_Use_Named_User__c</fullName>
+        <externalId>false</externalId>
+        <label>Full Use Named User</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GWh_of_Retail_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Apttus_Config2__AttributeValueId__r.GWh_of_Retail__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>GWh of Retail Formula</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GWh_of_Retail__c</fullName>
+        <externalId>false</externalId>
+        <label>GWh of Retail</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>401 – 880</fullName>
+                    <default>false</default>
+                    <label>401 – 880</label>
+                </value>
+                <value>
+                    <fullName>251 – 400</fullName>
+                    <default>false</default>
+                    <label>251 – 400</label>
+                </value>
+                <value>
+                    <fullName>&lt; 250</fullName>
+                    <default>false</default>
+                    <label>&lt; 250</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>JIC__c</fullName>
+        <externalId>false</externalId>
+        <label>JIC</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>License_Driver_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Apttus_Config2__ProductId__r.License_Driver__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>License Driver Formula</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>License_Driver__c</fullName>
+        <externalId>false</externalId>
+        <label>License Driver</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Base Metals / Bulk Metals KTPA</fullName>
+                    <default>false</default>
+                    <label>Base Metals / Bulk Metals KTPA</label>
+                </value>
+                <value>
+                    <fullName>Coal / Bulk Ore MTPA</fullName>
+                    <default>false</default>
+                    <label>Coal / Bulk Ore MTPA</label>
+                </value>
+                <value>
+                    <fullName>Concurrent Processes</fullName>
+                    <default>false</default>
+                    <label>Concurrent Processes</label>
+                </value>
+                <value>
+                    <fullName>Concurrent User</fullName>
+                    <default>false</default>
+                    <label>Concurrent User</label>
+                </value>
+                <value>
+                    <fullName>CPU Cores</fullName>
+                    <default>false</default>
+                    <label>CPU Cores</label>
+                </value>
+                <value>
+                    <fullName>Customer/Deal</fullName>
+                    <default>false</default>
+                    <label>Customer/Deal</label>
+                </value>
+                <value>
+                    <fullName>Customer Count</fullName>
+                    <default>false</default>
+                    <label>Customer Count</label>
+                </value>
+                <value>
+                    <fullName>Devices</fullName>
+                    <default>false</default>
+                    <label>Devices</label>
+                </value>
+                <value>
+                    <fullName>Equipment Monitors</fullName>
+                    <default>false</default>
+                    <label>Equipment Monitors</label>
+                </value>
+                <value>
+                    <fullName>Facility</fullName>
+                    <default>false</default>
+                    <label>Facility</label>
+                </value>
+                <value>
+                    <fullName>Fixed Fee</fullName>
+                    <default>false</default>
+                    <label>Fixed Fee</label>
+                </value>
+                <value>
+                    <fullName>Instance</fullName>
+                    <default>false</default>
+                    <label>Instance</label>
+                </value>
+                <value>
+                    <fullName>Load Flow Buses</fullName>
+                    <default>false</default>
+                    <label>Load Flow Buses</label>
+                </value>
+                <value>
+                    <fullName>Load Zones</fullName>
+                    <default>false</default>
+                    <label>Load Zones</label>
+                </value>
+                <value>
+                    <fullName>Meters</fullName>
+                    <default>false</default>
+                    <label>Meters</label>
+                </value>
+                <value>
+                    <fullName>Named User</fullName>
+                    <default>false</default>
+                    <label>Named User</label>
+                </value>
+                <value>
+                    <fullName>Pages per Year</fullName>
+                    <default>false</default>
+                    <label>Pages per Year</label>
+                </value>
+                <value>
+                    <fullName>Per Module</fullName>
+                    <default>false</default>
+                    <label>Per Module</label>
+                </value>
+                <value>
+                    <fullName>Points</fullName>
+                    <default>false</default>
+                    <label>Points</label>
+                </value>
+                <value>
+                    <fullName>Portfolio Capacity MWs</fullName>
+                    <default>false</default>
+                    <label>Portfolio Capacity MWs</label>
+                </value>
+                <value>
+                    <fullName>Precious Metals KOzPA</fullName>
+                    <default>false</default>
+                    <label>Precious Metals KOzPA</label>
+                </value>
+                <value>
+                    <fullName>Asset Count</fullName>
+                    <default>false</default>
+                    <label>Asset Count</label>
+                </value>
+                <value>
+                    <fullName>Pages</fullName>
+                    <default>false</default>
+                    <label>Pages</label>
+                </value>
+                <value>
+                    <fullName>Production Instance</fullName>
+                    <default>false</default>
+                    <label>Production Instance</label>
+                </value>
+                <value>
+                    <fullName>Enterprise</fullName>
+                    <default>false</default>
+                    <label>Enterprise</label>
+                </value>
+                <value>
+                    <fullName>Reactor</fullName>
+                    <default>false</default>
+                    <label>Reactor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>License_Metric_MineScape__c</fullName>
+        <externalId>false</externalId>
+        <label>License Metric - MineScape</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Named User</fullName>
+                    <default>false</default>
+                    <label>Named User</label>
+                </value>
+                <value>
+                    <fullName>Session User</fullName>
+                    <default>false</default>
+                    <label>Session User</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>License_Metric_MineScape_formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Apttus_Config2__AttributeValueId__r.License_Metric_MineScape__c
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>License Metric - MineScape formula</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Limited_Use_Named_User_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apttus_Config2__AttributeValueId__r.Limited_Use_Named_User__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Limited Use Named User Formula</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Limited_Use_Named_User__c</fullName>
+        <externalId>false</externalId>
+        <label>Limited Use Named User</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MW_of_Generation_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Apttus_Config2__AttributeValueId__r.MW_of_Generation__c
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MW of Generation Formula</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MW_of_Generation__c</fullName>
+        <externalId>false</externalId>
+        <label>MW of Generation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2751 – 5000</fullName>
+                    <default>false</default>
+                    <label>2751 – 5000</label>
+                </value>
+                <value>
+                    <fullName>1251 – 2750</fullName>
+                    <default>false</default>
+                    <label>1251 – 2750</label>
+                </value>
+                <value>
+                    <fullName>426 – 1250</fullName>
+                    <default>false</default>
+                    <label>426 – 1250</label>
+                </value>
+                <value>
+                    <fullName>151 – 425</fullName>
+                    <default>false</default>
+                    <label>151 – 425</label>
+                </value>
+                <value>
+                    <fullName>76 – 150</fullName>
+                    <default>false</default>
+                    <label>76 – 150</label>
+                </value>
+                <value>
+                    <fullName>&lt; 75</fullName>
+                    <default>false</default>
+                    <label>&lt; 75</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Margin__c</fullName>
+        <description>Margin = Extended Price - Cost</description>
+        <externalId>false</externalId>
+        <formula>Apttus_Config2__NetPrice__c  - Product_Cost__c</formula>
+        <label>Margin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Override_Cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Override Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Pricing_Factor__c</fullName>
+        <externalId>false</externalId>
+        <label>Pricing Factor</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( Apttus_Config2__PriceListItemId__r.Override_Cost__c,  Override_Cost__c ,  X3rd_Party_Cost_Value__c +  Tech_Soft_3D_Hoops_Cost__c )</formula>
+        <label>Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revenue_Stream_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Apttus_Config2__AttributeValueId__r.Revenue_Stream__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Revenue Stream Formula</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revenue_Stream_Sub_Type_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Apttus_Config2__AttributeValueId__r.Revenue_Stream_Sub_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Revenue Stream Sub Type Formula</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revenue_Stream_Sub_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue Stream Sub Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Asset Management</fullName>
+                    <default>false</default>
+                    <label>Asset Management</label>
+                </value>
+                <value>
+                    <fullName>Cyber Security</fullName>
+                    <default>false</default>
+                    <label>Cyber Security</label>
+                </value>
+                <value>
+                    <fullName>Integration Services</fullName>
+                    <default>false</default>
+                    <label>Integration Services</label>
+                </value>
+                <value>
+                    <fullName>New Logo</fullName>
+                    <default>false</default>
+                    <label>New Logo</label>
+                </value>
+                <value>
+                    <fullName>Organizational Change Management</fullName>
+                    <default>false</default>
+                    <label>Organizational Change Management</label>
+                </value>
+                <value>
+                    <fullName>Reporting Services</fullName>
+                    <default>false</default>
+                    <label>Reporting Services</label>
+                </value>
+                <value>
+                    <fullName>Upgrade</fullName>
+                    <default>false</default>
+                    <label>Upgrade</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead Services</fullName>
+                    <default>false</default>
+                    <label>Partner Lead Services</label>
+                </value>
+                <value>
+                    <fullName>Partner Subcontract Services</fullName>
+                    <default>false</default>
+                    <label>Partner Subcontract Services</label>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                    <label>Not Applicable</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Revenue_Stream_Type_Formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Apttus_Config2__AttributeValueId__r.Revenue_Stream_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Revenue Stream Type Formula</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revenue_Stream_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue Stream Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Additional Licenses</fullName>
+                    <default>false</default>
+                    <label>Additional Licenses</label>
+                </value>
+                <value>
+                    <fullName>Additional Licenses/Services</fullName>
+                    <default>false</default>
+                    <label>Additional Licenses/Services</label>
+                </value>
+                <value>
+                    <fullName>Adoption Services</fullName>
+                    <default>false</default>
+                    <label>Adoption Services</label>
+                </value>
+                <value>
+                    <fullName>Application</fullName>
+                    <default>false</default>
+                    <label>Application</label>
+                </value>
+                <value>
+                    <fullName>Compliance</fullName>
+                    <default>false</default>
+                    <label>Compliance</label>
+                </value>
+                <value>
+                    <fullName>Consulting Services</fullName>
+                    <default>false</default>
+                    <label>Consulting Services</label>
+                </value>
+                <value>
+                    <fullName>Customer Funded Development</fullName>
+                    <default>false</default>
+                    <label>Customer Funded Development</label>
+                </value>
+                <value>
+                    <fullName>Delivery Services</fullName>
+                    <default>false</default>
+                    <label>Delivery Services</label>
+                </value>
+                <value>
+                    <fullName>Extension (+1 or +2 option)</fullName>
+                    <default>false</default>
+                    <label>Extension (+1 or +2 option)</label>
+                </value>
+                <value>
+                    <fullName>Extension (other)</fullName>
+                    <default>false</default>
+                    <label>Extension (other)</label>
+                </value>
+                <value>
+                    <fullName>Facilities Management</fullName>
+                    <default>false</default>
+                    <label>Facilities Management</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Implementation</fullName>
+                    <default>false</default>
+                    <label>Implementation</label>
+                </value>
+                <value>
+                    <fullName>Integration &amp; Reporting Services</fullName>
+                    <default>false</default>
+                    <label>Integration &amp; Reporting Services</label>
+                </value>
+                <value>
+                    <fullName>IT Outsourcing</fullName>
+                    <default>false</default>
+                    <label>IT Outsourcing</label>
+                </value>
+                <value>
+                    <fullName>Mix of Options</fullName>
+                    <default>false</default>
+                    <label>Mix of Options</label>
+                </value>
+                <value>
+                    <fullName>Net New Service</fullName>
+                    <default>false</default>
+                    <label>Net New Service</label>
+                </value>
+                <value>
+                    <fullName>New Product</fullName>
+                    <default>false</default>
+                    <label>New Product</label>
+                </value>
+                <value>
+                    <fullName>Partner Services</fullName>
+                    <default>false</default>
+                    <label>Partner Services</label>
+                </value>
+                <value>
+                    <fullName>Product Optimization Package</fullName>
+                    <default>false</default>
+                    <label>Product Optimization Package</label>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+                <value>
+                    <fullName>Support Packages</fullName>
+                    <default>false</default>
+                    <label>Support Packages</label>
+                </value>
+                <value>
+                    <fullName>Training Services</fullName>
+                    <default>false</default>
+                    <label>Training Services</label>
+                </value>
+                <value>
+                    <fullName>Upgrade</fullName>
+                    <default>false</default>
+                    <label>Upgrade</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Revenue_Stream__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue Stream</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Licenses</fullName>
+                    <default>false</default>
+                    <label>Licenses</label>
+                </value>
+                <value>
+                    <fullName>Consulting</fullName>
+                    <default>false</default>
+                    <label>Consulting</label>
+                </value>
+                <value>
+                    <fullName>Managed Services</fullName>
+                    <default>false</default>
+                    <label>Managed Services</label>
+                </value>
+                <value>
+                    <fullName>Maintenance</fullName>
+                    <default>false</default>
+                    <label>Maintenance</label>
+                </value>
+                <value>
+                    <fullName>Hardware</fullName>
+                    <default>false</default>
+                    <label>Hardware</label>
+                </value>
+                <value>
+                    <fullName>SaaS</fullName>
+                    <default>false</default>
+                    <label>SaaS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apttus_Config2__AttributeValueId__r.Start_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Tech_Soft_3D_Hoops_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(( Apttus_Config2__Quantity__c &lt;= 100), Apttus_Config2__PriceListItemId__r.Level_1__c, IF(( Apttus_Config2__Quantity__c &gt; 100 &amp;&amp; Apttus_Config2__Quantity__c &lt;= 250),Apttus_Config2__PriceListItemId__r.Level_2__c,IF(( Apttus_Config2__Quantity__c &gt; 250),Apttus_Config2__PriceListItemId__r.Level_3__c,0.00))) * Apttus_Config2__Quantity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tech Soft 3D Hoops Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Tenancy__c</fullName>
+        <externalId>false</externalId>
+        <label>Tenancy</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Multi-Tenant</fullName>
+                    <default>false</default>
+                    <label>Multi-Tenant</label>
+                </value>
+                <value>
+                    <fullName>Sole Tenant</fullName>
+                    <default>false</default>
+                    <label>Sole Tenant</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Tenancy_formula__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Apttus_Config2__AttributeValueId__r.Tenancy__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Tenancy formula</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X3rd_Party_Cost_Value__c</fullName>
+        <description>((Cost on PLI + 3rd Party Cost on PLI  + 3rd Party Per User Cost on PLI )  * Qty) + (3rd Part Cost % * Net Price)</description>
+        <externalId>false</externalId>
+        <formula>((Apttus_Config2__PriceListItemId__r.X3rd_Party_Base_Cost__c + Apttus_Config2__PriceListItemId__r.X3rd_Party_Per_User_Cost__c + Apttus_Config2__PriceListItemId__r.Apttus_Config2__Cost__c) * Apttus_Config2__Quantity__c) + (Apttus_Config2__PriceListItemId__r.X3rd_Party_Cost__c *  Apttus_Config2__NetPrice__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>3rd Party Cost Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X3rd_Party_License_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>Cost2__c  +  Cost3__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>3rd Party License Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X3rd_Party_Mtnc_Cost_Value__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Apttus_Config2__PriceListItemId__r.X3rd_Party_Mtnc_Cost__c  *  X3rd_Party_License_Cost__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>3rd Party Mtnc % Cost Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X3rd_Party_Mtnc_Cost__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apttus_Config2__PriceListItemId__r.X3rd_Party_Mtnc_Base_Cost__c +   X3rd_Party_Mtnc_Cost_Value__c + ( Apttus_Config2__PriceListItemId__r.X3rd_Party_Per_User_Mtnc_Cost__c *  Apttus_Config2__Quantity__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>3rd Party Mtnc Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

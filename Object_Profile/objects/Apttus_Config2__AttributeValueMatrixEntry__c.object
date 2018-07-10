@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Contract_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Perpetual</fullName>
+                    <default>false</default>
+                    <label>Perpetual</label>
+                </value>
+                <value>
+                    <fullName>Subscription</fullName>
+                    <default>false</default>
+                    <label>Subscription</label>
+                </value>
+                <value>
+                    <fullName>Time &amp; Materials</fullName>
+                    <default>false</default>
+                    <label>Time &amp; Materials</label>
+                </value>
+                <value>
+                    <fullName>Fixed Price</fullName>
+                    <default>false</default>
+                    <label>Fixed Price</label>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Reinstatement</fullName>
+                    <default>false</default>
+                    <label>Reinstatement</label>
+                </value>
+                <value>
+                    <fullName>Projects</fullName>
+                    <default>false</default>
+                    <label>Projects</label>
+                </value>
+                <value>
+                    <fullName>New Support Package</fullName>
+                    <default>false</default>
+                    <label>New Support Package</label>
+                </value>
+                <value>
+                    <fullName>Services</fullName>
+                    <default>false</default>
+                    <label>Services</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Revenue_Stream_Sub_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue Stream Sub Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Asset Management</fullName>
+                    <default>false</default>
+                    <label>Asset Management</label>
+                </value>
+                <value>
+                    <fullName>Cyber Security</fullName>
+                    <default>false</default>
+                    <label>Cyber Security</label>
+                </value>
+                <value>
+                    <fullName>Integration Services</fullName>
+                    <default>false</default>
+                    <label>Integration Services</label>
+                </value>
+                <value>
+                    <fullName>New Logo</fullName>
+                    <default>false</default>
+                    <label>New Logo</label>
+                </value>
+                <value>
+                    <fullName>Organizational Change Management</fullName>
+                    <default>false</default>
+                    <label>Organizational Change Management</label>
+                </value>
+                <value>
+                    <fullName>Reporting Services</fullName>
+                    <default>false</default>
+                    <label>Reporting Services</label>
+                </value>
+                <value>
+                    <fullName>Upgrade</fullName>
+                    <default>false</default>
+                    <label>Upgrade</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead Services</fullName>
+                    <default>false</default>
+                    <label>Partner Lead Services</label>
+                </value>
+                <value>
+                    <fullName>Partner Subcontract Services</fullName>
+                    <default>false</default>
+                    <label>Partner Subcontract Services</label>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                    <label>Not Applicable</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Revenue_Stream_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue Stream Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Additional Licenses</fullName>
+                    <default>false</default>
+                    <label>Additional Licenses</label>
+                </value>
+                <value>
+                    <fullName>Additional Licenses/Services</fullName>
+                    <default>false</default>
+                    <label>Additional Licenses/Services</label>
+                </value>
+                <value>
+                    <fullName>Adoption Services</fullName>
+                    <default>false</default>
+                    <label>Adoption Services</label>
+                </value>
+                <value>
+                    <fullName>Application</fullName>
+                    <default>false</default>
+                    <label>Application</label>
+                </value>
+                <value>
+                    <fullName>Compliance</fullName>
+                    <default>false</default>
+                    <label>Compliance</label>
+                </value>
+                <value>
+                    <fullName>Consulting Services</fullName>
+                    <default>false</default>
+                    <label>Consulting Services</label>
+                </value>
+                <value>
+                    <fullName>Customer Funded Development</fullName>
+                    <default>false</default>
+                    <label>Customer Funded Development</label>
+                </value>
+                <value>
+                    <fullName>Delivery Services</fullName>
+                    <default>false</default>
+                    <label>Delivery Services</label>
+                </value>
+                <value>
+                    <fullName>Extension (+1 or +2 option)</fullName>
+                    <default>false</default>
+                    <label>Extension (+1 or +2 option)</label>
+                </value>
+                <value>
+                    <fullName>Extension (other)</fullName>
+                    <default>false</default>
+                    <label>Extension (other)</label>
+                </value>
+                <value>
+                    <fullName>Facilities Management</fullName>
+                    <default>false</default>
+                    <label>Facilities Management</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Implementation</fullName>
+                    <default>false</default>
+                    <label>Implementation</label>
+                </value>
+                <value>
+                    <fullName>Integration &amp; Reporting Services</fullName>
+                    <default>false</default>
+                    <label>Integration &amp; Reporting Services</label>
+                </value>
+                <value>
+                    <fullName>IT Outsourcing</fullName>
+                    <default>false</default>
+                    <label>IT Outsourcing</label>
+                </value>
+                <value>
+                    <fullName>Mix of Options</fullName>
+                    <default>false</default>
+                    <label>Mix of Options</label>
+                </value>
+                <value>
+                    <fullName>Net New Service</fullName>
+                    <default>false</default>
+                    <label>Net New Service</label>
+                </value>
+                <value>
+                    <fullName>New Product</fullName>
+                    <default>false</default>
+                    <label>New Product</label>
+                </value>
+                <value>
+                    <fullName>Partner Services</fullName>
+                    <default>false</default>
+                    <label>Partner Services</label>
+                </value>
+                <value>
+                    <fullName>Product Optimization Package</fullName>
+                    <default>false</default>
+                    <label>Product Optimization Package</label>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+                <value>
+                    <fullName>Support Packages</fullName>
+                    <default>false</default>
+                    <label>Support Packages</label>
+                </value>
+                <value>
+                    <fullName>Training Services</fullName>
+                    <default>false</default>
+                    <label>Training Services</label>
+                </value>
+                <value>
+                    <fullName>Upgrade</fullName>
+                    <default>false</default>
+                    <label>Upgrade</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Revenue_Stream__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue Stream</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Licenses</fullName>
+                    <default>false</default>
+                    <label>Licenses</label>
+                </value>
+                <value>
+                    <fullName>Consulting</fullName>
+                    <default>false</default>
+                    <label>Consulting</label>
+                </value>
+                <value>
+                    <fullName>Managed Services</fullName>
+                    <default>false</default>
+                    <label>Managed Services</label>
+                </value>
+                <value>
+                    <fullName>Maintenance</fullName>
+                    <default>false</default>
+                    <label>Maintenance</label>
+                </value>
+                <value>
+                    <fullName>Hardware</fullName>
+                    <default>false</default>
+                    <label>Hardware</label>
+                </value>
+                <value>
+                    <fullName>SaaS</fullName>
+                    <default>false</default>
+                    <label>SaaS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+</CustomObject>

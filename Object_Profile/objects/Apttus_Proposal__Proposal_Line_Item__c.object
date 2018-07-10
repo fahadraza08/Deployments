@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Contract_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contract Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Perpetual</fullName>
+                    <default>false</default>
+                    <label>Perpetual</label>
+                </value>
+                <value>
+                    <fullName>Subscription</fullName>
+                    <default>false</default>
+                    <label>Subscription</label>
+                </value>
+                <value>
+                    <fullName>Time &amp; Materials</fullName>
+                    <default>false</default>
+                    <label>Time &amp; Materials</label>
+                </value>
+                <value>
+                    <fullName>Fixed Price</fullName>
+                    <default>false</default>
+                    <label>Fixed Price</label>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Reinstatement</fullName>
+                    <default>false</default>
+                    <label>Reinstatement</label>
+                </value>
+                <value>
+                    <fullName>Projects</fullName>
+                    <default>false</default>
+                    <label>Projects</label>
+                </value>
+                <value>
+                    <fullName>New Support Package</fullName>
+                    <default>false</default>
+                    <label>New Support Package</label>
+                </value>
+                <value>
+                    <fullName>Services</fullName>
+                    <default>false</default>
+                    <label>Services</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Cost2__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost2</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ESS_Use_Named_User__c</fullName>
+        <externalId>false</externalId>
+        <label>ESS Use Named User</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Exclude_on_Proposal_output__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Apttus_QPConfig__OptionId__c)), Apttus_QPConfig__OptionId__r.Exclude_on_Proposal_output__c ,IF(NOT(ISBLANK( Apttus_Proposal__Product__c )), Apttus_Proposal__Product__r.Exclude_on_Proposal_output__c ,false))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Exclude on Proposal output ?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Extended_Base_Price__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apttus_QPConfig__BaseExtendedPrice__c  /  Apttus_QPConfig__Quantity2__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Extended Base Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Full_Use_Named_User__c</fullName>
+        <externalId>false</externalId>
+        <label>Full Use Named User</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GWh_of_Retail__c</fullName>
+        <externalId>false</externalId>
+        <label>GWh of Retail</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>401 – 880</fullName>
+                    <default>false</default>
+                    <label>401 – 880</label>
+                </value>
+                <value>
+                    <fullName>251 – 400</fullName>
+                    <default>false</default>
+                    <label>251 – 400</label>
+                </value>
+                <value>
+                    <fullName>&lt; 250</fullName>
+                    <default>false</default>
+                    <label>&lt; 250</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>License_Driver__c</fullName>
+        <externalId>false</externalId>
+        <label>License Driver</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Base Metals / Bulk Metals KTPA</fullName>
+                    <default>false</default>
+                    <label>Base Metals / Bulk Metals KTPA</label>
+                </value>
+                <value>
+                    <fullName>Coal / Bulk Ore MTPA</fullName>
+                    <default>false</default>
+                    <label>Coal / Bulk Ore MTPA</label>
+                </value>
+                <value>
+                    <fullName>Concurrent Processes</fullName>
+                    <default>false</default>
+                    <label>Concurrent Processes</label>
+                </value>
+                <value>
+                    <fullName>Concurrent User</fullName>
+                    <default>false</default>
+                    <label>Concurrent User</label>
+                </value>
+                <value>
+                    <fullName>CPU Cores</fullName>
+                    <default>false</default>
+                    <label>CPU Cores</label>
+                </value>
+                <value>
+                    <fullName>Customer/Deal</fullName>
+                    <default>false</default>
+                    <label>Customer/Deal</label>
+                </value>
+                <value>
+                    <fullName>Customer Count</fullName>
+                    <default>false</default>
+                    <label>Customer Count</label>
+                </value>
+                <value>
+                    <fullName>Devices</fullName>
+                    <default>false</default>
+                    <label>Devices</label>
+                </value>
+                <value>
+                    <fullName>Equipment Monitors</fullName>
+                    <default>false</default>
+                    <label>Equipment Monitors</label>
+                </value>
+                <value>
+                    <fullName>Facility</fullName>
+                    <default>false</default>
+                    <label>Facility</label>
+                </value>
+                <value>
+                    <fullName>Fixed Fee</fullName>
+                    <default>false</default>
+                    <label>Fixed Fee</label>
+                </value>
+                <value>
+                    <fullName>Instance</fullName>
+                    <default>false</default>
+                    <label>Instance</label>
+                </value>
+                <value>
+                    <fullName>Load Flow Buses</fullName>
+                    <default>false</default>
+                    <label>Load Flow Buses</label>
+                </value>
+                <value>
+                    <fullName>Load Zones</fullName>
+                    <default>false</default>
+                    <label>Load Zones</label>
+                </value>
+                <value>
+                    <fullName>Meters</fullName>
+                    <default>false</default>
+                    <label>Meters</label>
+                </value>
+                <value>
+                    <fullName>Named User</fullName>
+                    <default>false</default>
+                    <label>Named User</label>
+                </value>
+                <value>
+                    <fullName>Pages per Year</fullName>
+                    <default>false</default>
+                    <label>Pages per Year</label>
+                </value>
+                <value>
+                    <fullName>Per Module</fullName>
+                    <default>false</default>
+                    <label>Per Module</label>
+                </value>
+                <value>
+                    <fullName>Points</fullName>
+                    <default>false</default>
+                    <label>Points</label>
+                </value>
+                <value>
+                    <fullName>Portfolio Capacity MWs</fullName>
+                    <default>false</default>
+                    <label>Portfolio Capacity MWs</label>
+                </value>
+                <value>
+                    <fullName>Precious Metals KOzPA</fullName>
+                    <default>false</default>
+                    <label>Precious Metals KOzPA</label>
+                </value>
+                <value>
+                    <fullName>Asset Count</fullName>
+                    <default>false</default>
+                    <label>Asset Count</label>
+                </value>
+                <value>
+                    <fullName>Pages</fullName>
+                    <default>false</default>
+                    <label>Pages</label>
+                </value>
+                <value>
+                    <fullName>Production Instance</fullName>
+                    <default>false</default>
+                    <label>Production Instance</label>
+                </value>
+                <value>
+                    <fullName>Enterprise</fullName>
+                    <default>false</default>
+                    <label>Enterprise</label>
+                </value>
+                <value>
+                    <fullName>Reactor</fullName>
+                    <default>false</default>
+                    <label>Reactor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>License_Metric_MineScape__c</fullName>
+        <externalId>false</externalId>
+        <label>License Metric - MineScape</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Named User</fullName>
+                    <default>false</default>
+                    <label>Named User</label>
+                </value>
+                <value>
+                    <fullName>Session User</fullName>
+                    <default>false</default>
+                    <label>Session User</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Limited_Use_Named_User__c</fullName>
+        <externalId>false</externalId>
+        <label>Limited Use Named User</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MW_of_Generation__c</fullName>
+        <externalId>false</externalId>
+        <label>MW of Generation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2751 – 5000</fullName>
+                    <default>false</default>
+                    <label>2751 – 5000</label>
+                </value>
+                <value>
+                    <fullName>1251 – 2750</fullName>
+                    <default>false</default>
+                    <label>1251 – 2750</label>
+                </value>
+                <value>
+                    <fullName>426 – 1250</fullName>
+                    <default>false</default>
+                    <label>426 – 1250</label>
+                </value>
+                <value>
+                    <fullName>151 – 425</fullName>
+                    <default>false</default>
+                    <label>151 – 425</label>
+                </value>
+                <value>
+                    <fullName>76 – 150</fullName>
+                    <default>false</default>
+                    <label>76 – 150</label>
+                </value>
+                <value>
+                    <fullName>&lt; 75</fullName>
+                    <default>false</default>
+                    <label>&lt; 75</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Maintenance_percentage__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(TEXT( Apttus_Proposal__Product__r.Product_Line_L1__c ),&quot;nMarket&quot;),&apos;40%&apos;,&apos;22%&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Maintenance percentage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Net_Price_Template__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apttus_QPConfig__NetPrice__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Net Price Template</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Non_Standard_License_Metric_Pic_Val__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-Standard License Metric</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Assets</fullName>
+                    <default>false</default>
+                    <label>Assets</label>
+                </value>
+                <value>
+                    <fullName>Catalogues</fullName>
+                    <default>false</default>
+                    <label>Catalogues</label>
+                </value>
+                <value>
+                    <fullName>Concurrent Processes</fullName>
+                    <default>false</default>
+                    <label>Concurrent Processes</label>
+                </value>
+                <value>
+                    <fullName>Concurrent Users</fullName>
+                    <default>false</default>
+                    <label>Concurrent Users</label>
+                </value>
+                <value>
+                    <fullName>Cores</fullName>
+                    <default>false</default>
+                    <label>Cores</label>
+                </value>
+                <value>
+                    <fullName>CPUs</fullName>
+                    <default>false</default>
+                    <label>CPUs</label>
+                </value>
+                <value>
+                    <fullName>Customers</fullName>
+                    <default>false</default>
+                    <label>Customers</label>
+                </value>
+                <value>
+                    <fullName>Devices</fullName>
+                    <default>false</default>
+                    <label>Devices</label>
+                </value>
+                <value>
+                    <fullName>Enterprise</fullName>
+                    <default>false</default>
+                    <label>Enterprise</label>
+                </value>
+                <value>
+                    <fullName>Equipment Monitors</fullName>
+                    <default>false</default>
+                    <label>Equipment Monitors</label>
+                </value>
+                <value>
+                    <fullName>Facilities</fullName>
+                    <default>false</default>
+                    <label>Facilities</label>
+                </value>
+                <value>
+                    <fullName>Fixed Fee - Quantity 1</fullName>
+                    <default>false</default>
+                    <label>Fixed Fee - Quantity 1</label>
+                </value>
+                <value>
+                    <fullName>Forecast Points</fullName>
+                    <default>false</default>
+                    <label>Forecast Points</label>
+                </value>
+                <value>
+                    <fullName>Full Use Named Users</fullName>
+                    <default>false</default>
+                    <label>Full Use Named Users</label>
+                </value>
+                <value>
+                    <fullName>Instances</fullName>
+                    <default>false</default>
+                    <label>Instances</label>
+                </value>
+                <value>
+                    <fullName>Inventory Users</fullName>
+                    <default>false</default>
+                    <label>Inventory Users</label>
+                </value>
+                <value>
+                    <fullName>KOzPA</fullName>
+                    <default>false</default>
+                    <label>KOzPA</label>
+                </value>
+                <value>
+                    <fullName>KTPA</fullName>
+                    <default>false</default>
+                    <label>KTPA</label>
+                </value>
+                <value>
+                    <fullName>Limited Use Named Users</fullName>
+                    <default>false</default>
+                    <label>Limited Use Named Users</label>
+                </value>
+                <value>
+                    <fullName>Load Flow Buses</fullName>
+                    <default>false</default>
+                    <label>Load Flow Buses</label>
+                </value>
+                <value>
+                    <fullName>Load Zones</fullName>
+                    <default>false</default>
+                    <label>Load Zones</label>
+                </value>
+                <value>
+                    <fullName>Markets</fullName>
+                    <default>false</default>
+                    <label>Markets</label>
+                </value>
+                <value>
+                    <fullName>Meters</fullName>
+                    <default>false</default>
+                    <label>Meters</label>
+                </value>
+                <value>
+                    <fullName>MTPA</fullName>
+                    <default>false</default>
+                    <label>MTPA</label>
+                </value>
+                <value>
+                    <fullName>Named Dispatch Users</fullName>
+                    <default>false</default>
+                    <label>Named Dispatch Users</label>
+                </value>
+                <value>
+                    <fullName>Named Mobile Users</fullName>
+                    <default>false</default>
+                    <label>Named Mobile Users</label>
+                </value>
+                <value>
+                    <fullName>Named Users</fullName>
+                    <default>false</default>
+                    <label>Named Users</label>
+                </value>
+                <value>
+                    <fullName>Non-Production Instance</fullName>
+                    <default>false</default>
+                    <label>Non-Production Instance</label>
+                </value>
+                <value>
+                    <fullName>One Time</fullName>
+                    <default>false</default>
+                    <label>One Time</label>
+                </value>
+                <value>
+                    <fullName>Pages</fullName>
+                    <default>false</default>
+                    <label>Pages</label>
+                </value>
+                <value>
+                    <fullName>Pages per year</fullName>
+                    <default>false</default>
+                    <label>Pages per year</label>
+                </value>
+                <value>
+                    <fullName>Partner Count</fullName>
+                    <default>false</default>
+                    <label>Partner Count</label>
+                </value>
+                <value>
+                    <fullName>Peak Load (DTh)</fullName>
+                    <default>false</default>
+                    <label>Peak Load (DTh)</label>
+                </value>
+                <value>
+                    <fullName>Peak Load (MW)</fullName>
+                    <default>false</default>
+                    <label>Peak Load (MW)</label>
+                </value>
+                <value>
+                    <fullName>Points</fullName>
+                    <default>false</default>
+                    <label>Points</label>
+                </value>
+                <value>
+                    <fullName>Portfolio Capacity MWs</fullName>
+                    <default>false</default>
+                    <label>Portfolio Capacity MWs</label>
+                </value>
+                <value>
+                    <fullName>Processors</fullName>
+                    <default>false</default>
+                    <label>Processors</label>
+                </value>
+                <value>
+                    <fullName>Production Instance</fullName>
+                    <default>false</default>
+                    <label>Production Instance</label>
+                </value>
+                <value>
+                    <fullName>Reactors</fullName>
+                    <default>false</default>
+                    <label>Reactors</label>
+                </value>
+                <value>
+                    <fullName>Seats</fullName>
+                    <default>false</default>
+                    <label>Seats</label>
+                </value>
+                <value>
+                    <fullName>Server Packs</fullName>
+                    <default>false</default>
+                    <label>Server Packs</label>
+                </value>
+                <value>
+                    <fullName>Servers</fullName>
+                    <default>false</default>
+                    <label>Servers</label>
+                </value>
+                <value>
+                    <fullName>Session Users</fullName>
+                    <default>false</default>
+                    <label>Session Users</label>
+                </value>
+                <value>
+                    <fullName>Sites</fullName>
+                    <default>false</default>
+                    <label>Sites</label>
+                </value>
+                <value>
+                    <fullName>Transactions</fullName>
+                    <default>false</default>
+                    <label>Transactions</label>
+                </value>
+                <value>
+                    <fullName>Units</fullName>
+                    <default>false</default>
+                    <label>Units</label>
+                </value>
+                <value>
+                    <fullName>Workstations</fullName>
+                    <default>false</default>
+                    <label>Workstations</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Non_Standard_License_Metric__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Non-Standard License Metric</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Apttus_QPConfig__OptionId__c)),Apttus_QPConfig__OptionId__r.Name,Apttus_Proposal__Product__r.Name)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity_for_Template__c</fullName>
+        <externalId>false</externalId>
+        <formula>Apttus_QPConfig__Quantity2__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Quantity for Template</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revenue_Stream_Sub_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue Stream Sub Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Asset Management</fullName>
+                    <default>false</default>
+                    <label>Asset Management</label>
+                </value>
+                <value>
+                    <fullName>Cyber Security</fullName>
+                    <default>false</default>
+                    <label>Cyber Security</label>
+                </value>
+                <value>
+                    <fullName>Integration Services</fullName>
+                    <default>false</default>
+                    <label>Integration Services</label>
+                </value>
+                <value>
+                    <fullName>New Logo</fullName>
+                    <default>false</default>
+                    <label>New Logo</label>
+                </value>
+                <value>
+                    <fullName>Organizational Change Management</fullName>
+                    <default>false</default>
+                    <label>Organizational Change Management</label>
+                </value>
+                <value>
+                    <fullName>Reporting Services</fullName>
+                    <default>false</default>
+                    <label>Reporting Services</label>
+                </value>
+                <value>
+                    <fullName>Upgrade</fullName>
+                    <default>false</default>
+                    <label>Upgrade</label>
+                </value>
+                <value>
+                    <fullName>Partner Lead Services</fullName>
+                    <default>false</default>
+                    <label>Partner Lead Services</label>
+                </value>
+                <value>
+                    <fullName>Partner Subcontract Services</fullName>
+                    <default>false</default>
+                    <label>Partner Subcontract Services</label>
+                </value>
+                <value>
+                    <fullName>Not Applicable</fullName>
+                    <default>false</default>
+                    <label>Not Applicable</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Revenue_Stream_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue Stream Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Additional Licenses</fullName>
+                    <default>false</default>
+                    <label>Additional Licenses</label>
+                </value>
+                <value>
+                    <fullName>Additional Licenses/Services</fullName>
+                    <default>false</default>
+                    <label>Additional Licenses/Services</label>
+                </value>
+                <value>
+                    <fullName>Adoption Services</fullName>
+                    <default>false</default>
+                    <label>Adoption Services</label>
+                </value>
+                <value>
+                    <fullName>Application</fullName>
+                    <default>false</default>
+                    <label>Application</label>
+                </value>
+                <value>
+                    <fullName>Compliance</fullName>
+                    <default>false</default>
+                    <label>Compliance</label>
+                </value>
+                <value>
+                    <fullName>Consulting Services</fullName>
+                    <default>false</default>
+                    <label>Consulting Services</label>
+                </value>
+                <value>
+                    <fullName>Customer Funded Development</fullName>
+                    <default>false</default>
+                    <label>Customer Funded Development</label>
+                </value>
+                <value>
+                    <fullName>Delivery Services</fullName>
+                    <default>false</default>
+                    <label>Delivery Services</label>
+                </value>
+                <value>
+                    <fullName>Extension (+1 or +2 option)</fullName>
+                    <default>false</default>
+                    <label>Extension (+1 or +2 option)</label>
+                </value>
+                <value>
+                    <fullName>Extension (other)</fullName>
+                    <default>false</default>
+                    <label>Extension (other)</label>
+                </value>
+                <value>
+                    <fullName>Facilities Management</fullName>
+                    <default>false</default>
+                    <label>Facilities Management</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Implementation</fullName>
+                    <default>false</default>
+                    <label>Implementation</label>
+                </value>
+                <value>
+                    <fullName>Integration &amp; Reporting Services</fullName>
+                    <default>false</default>
+                    <label>Integration &amp; Reporting Services</label>
+                </value>
+                <value>
+                    <fullName>IT Outsourcing</fullName>
+                    <default>false</default>
+                    <label>IT Outsourcing</label>
+                </value>
+                <value>
+                    <fullName>Mix of Options</fullName>
+                    <default>false</default>
+                    <label>Mix of Options</label>
+                </value>
+                <value>
+                    <fullName>Net New Service</fullName>
+                    <default>false</default>
+                    <label>Net New Service</label>
+                </value>
+                <value>
+                    <fullName>New Product</fullName>
+                    <default>false</default>
+                    <label>New Product</label>
+                </value>
+                <value>
+                    <fullName>Partner Services</fullName>
+                    <default>false</default>
+                    <label>Partner Services</label>
+                </value>
+                <value>
+                    <fullName>Product Optimization Package</fullName>
+                    <default>false</default>
+                    <label>Product Optimization Package</label>
+                </value>
+                <value>
+                    <fullName>Renewal</fullName>
+                    <default>false</default>
+                    <label>Renewal</label>
+                </value>
+                <value>
+                    <fullName>Support Packages</fullName>
+                    <default>false</default>
+                    <label>Support Packages</label>
+                </value>
+                <value>
+                    <fullName>Training Services</fullName>
+                    <default>false</default>
+                    <label>Training Services</label>
+                </value>
+                <value>
+                    <fullName>Upgrade</fullName>
+                    <default>false</default>
+                    <label>Upgrade</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Revenue_Stream__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue Stream</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Licenses</fullName>
+                    <default>false</default>
+                    <label>Licenses</label>
+                </value>
+                <value>
+                    <fullName>Consulting</fullName>
+                    <default>false</default>
+                    <label>Consulting</label>
+                </value>
+                <value>
+                    <fullName>Managed Services</fullName>
+                    <default>false</default>
+                    <label>Managed Services</label>
+                </value>
+                <value>
+                    <fullName>Maintenance</fullName>
+                    <default>false</default>
+                    <label>Maintenance</label>
+                </value>
+                <value>
+                    <fullName>Hardware</fullName>
+                    <default>false</default>
+                    <label>Hardware</label>
+                </value>
+                <value>
+                    <fullName>SaaS</fullName>
+                    <default>false</default>
+                    <label>SaaS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Tenancy__c</fullName>
+        <externalId>false</externalId>
+        <label>Tenancy</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Multi-Tenant</fullName>
+                    <default>false</default>
+                    <label>Multi-Tenant</label>
+                </value>
+                <value>
+                    <fullName>Sole Tenant</fullName>
+                    <default>false</default>
+                    <label>Sole Tenant</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Term__c</fullName>
+        <description>The start date and end date is used to called the term duration of the licensed products</description>
+        <externalId>false</externalId>
+        <formula>Round((Apttus_QPConfig__EndDate__c  - Apttus_QPConfig__StartDate__c)/30.5,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Term</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

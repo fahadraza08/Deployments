@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Configure_Flow__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(((LEN( Apttus_QPConfig__PriceListId__c ) &gt; 0) &amp;&amp; ISPICKVAL( Apttus_QPApprov__Approval_Status__c ,&apos;Not Submitted&apos;))  , HYPERLINK(&quot;/apex/Apttus_QPConfig__ProposalConfiguration?id=&quot; &amp;Id &amp; &quot;&amp;flow=ngFlow&quot;, IMAGE(&quot;/resource/Apttus_QPConfig__Button_Configure&quot;, &quot;Configure Products&quot;),&quot;_self&quot;), NULL)</formula>
+        <label>Configure (Flow)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Configure_Products_Flow__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( LEN( Apttus_QPConfig__PriceListId__c ) &gt; 0 , HYPERLINK(&quot;/apex/Apttus_QPConfig__ProposalConfiguration?id=&quot; &amp;Id &amp; &quot;&amp;flow=Default&quot;, IMAGE(&quot;/resource/Apttus_QPConfig__Button_Configure&quot;, &quot;Configure Products&quot;),&quot;_self&quot;), NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Configure Products (Flow)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Configure_Products_Read_Only__c</fullName>
+        <description>Read Only config button when quote/proposal is already approved</description>
+        <externalId>false</externalId>
+        <formula>IF ( ((LEN( Apttus_QPConfig__PriceListId__c ) &gt; 0) &amp;&amp; NOT(ISPICKVAL( Apttus_QPApprov__Approval_Status__c ,&apos;Not Submitted&apos;))) , HYPERLINK(&quot;/apex/Apttus_QPConfig__ProposalConfiguration?id=&quot;&amp;Id&amp;&quot;&amp;flow=ngFlow&quot;&amp;&quot;&amp;mode=readOnly&quot;,IMAGE(&quot;/resource/Apttus_QPConfig__Button_Configure&quot;, &quot;Configure Products&quot;),&quot;_self&quot;), NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Configure Products (Read Only)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Document_Generated_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(
+  MONTH(TODAY()),
+  1, &quot;January&quot;,
+  2, &quot;February&quot;,
+  3, &quot;March&quot;,
+  4, &quot;April&quot;,
+  5, &quot;May&quot;,
+  6, &quot;June&quot;,
+  7, &quot;July&quot;,
+  8, &quot;August&quot;,
+  9, &quot;September&quot;,
+  10, &quot;October&quot;,
+  11, &quot;November&quot;,
+  &quot;December&quot;
+) &amp; &quot; &quot; &amp; Text(Day(Today()))&amp; &quot;, &quot;  &amp; Text(Year(Today()))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Document Generated Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expiry_Date__c</fullName>
+        <description>Expiration date of Price Hold / Future Discount</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Expiry Date is required when a Price Hold / Future Discount is given.</inlineHelpText>
+        <label>Expiry Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Generate__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (ISPICKVAL(Apttus_QPApprov__Approval_Status__c,&quot;Approved&quot;) , HYPERLINK(&quot;/apex/Apttus_Proposal__ProposalGenerate?id=&quot;&amp;Id , IMAGE(&quot;/resource/Apttus_Proposal__Button_Generate&quot;, &quot;Generate&quot;),&quot;_self&quot;), NULL)</formula>
+        <label>Generate</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Net_Price_For_Hardware__c</fullName>
+        <externalId>false</externalId>
+        <label>Net Price For Hardware</label>
+        <summarizedField>Apttus_Proposal__Proposal_Line_Item__c.Apttus_QPConfig__NetPrice__c</summarizedField>
+        <summaryFilterItems>
+            <field>Apttus_Proposal__Proposal_Line_Item__c.Revenue_Stream__c</field>
+            <operation>equals</operation>
+            <value>Hardware</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Apttus_Proposal__Proposal_Line_Item__c.Apttus_Proposal__Proposal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Currency__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Apttus_Proposal__Opportunity__r.CurrencyIsoCode)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Currency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Present_Custom__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (ISPICKVAL( Apttus_QPApprov__Approval_Status__c ,&quot;Approved&quot;), HYPERLINK(&quot;/apex/Apttus_Proposal__ProposalPresent?id=&quot;&amp;Id, IMAGE(&quot;/resource/Apttus_Proposal__Button_Present&quot;, &quot;Present&quot;),&quot;_self&quot;), NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Present</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price_Hold_Future_Discount__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If TRUE, user must populate &apos;Expiry Date&apos; field.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, Expiry Date field must be populated.</inlineHelpText>
+        <label>Price Hold / Future Discount</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Product_Line__c</fullName>
+        <description>Product Line selected will appear on cover page of Quote output document.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product Line selected will appear on cover page of Quote output document.</inlineHelpText>
+        <label>Primary Product Line</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Advisory Reports</fullName>
+                    <default>false</default>
+                    <label>Advisory Reports</label>
+                </value>
+                <value>
+                    <fullName>Advisory Services</fullName>
+                    <default>false</default>
+                    <label>Advisory Services</label>
+                </value>
+                <value>
+                    <fullName>Asset Suite</fullName>
+                    <default>false</default>
+                    <label>Asset Suite</label>
+                </value>
+                <value>
+                    <fullName>Axis</fullName>
+                    <default>false</default>
+                    <label>Axis</label>
+                </value>
+                <value>
+                    <fullName>Capacity Expansion</fullName>
+                    <default>false</default>
+                    <label>Capacity Expansion</label>
+                </value>
+                <value>
+                    <fullName>CCLAS</fullName>
+                    <default>false</default>
+                    <label>CCLAS</label>
+                </value>
+                <value>
+                    <fullName>Critical Inventory Optimization</fullName>
+                    <default>false</default>
+                    <label>Critical Inventory Optimization</label>
+                </value>
+                <value>
+                    <fullName>DMS</fullName>
+                    <default>false</default>
+                    <label>DMS</label>
+                </value>
+                <value>
+                    <fullName>Ellipse APM</fullName>
+                    <default>false</default>
+                    <label>Ellipse APM</label>
+                </value>
+                <value>
+                    <fullName>Ellipse EAM</fullName>
+                    <default>false</default>
+                    <label>Ellipse EAM</label>
+                </value>
+                <value>
+                    <fullName>Ellipse WFM</fullName>
+                    <default>false</default>
+                    <label>Ellipse WFM</label>
+                </value>
+                <value>
+                    <fullName>EMS</fullName>
+                    <default>false</default>
+                    <label>EMS</label>
+                </value>
+                <value>
+                    <fullName>EPM Legacy</fullName>
+                    <default>false</default>
+                    <label>EPM Legacy</label>
+                </value>
+                <value>
+                    <fullName>EPM Other</fullName>
+                    <default>false</default>
+                    <label>EPM Other</label>
+                </value>
+                <value>
+                    <fullName>ER Suite</fullName>
+                    <default>false</default>
+                    <label>ER Suite</label>
+                </value>
+                <value>
+                    <fullName>eSOMS</fullName>
+                    <default>false</default>
+                    <label>eSOMS</label>
+                </value>
+                <value>
+                    <fullName>EV Essential</fullName>
+                    <default>false</default>
+                    <label>EV Essential</label>
+                </value>
+                <value>
+                    <fullName>Fieldreach</fullName>
+                    <default>false</default>
+                    <label>Fieldreach</label>
+                </value>
+                <value>
+                    <fullName>GMS</fullName>
+                    <default>false</default>
+                    <label>GMS</label>
+                </value>
+                <value>
+                    <fullName>GridView</fullName>
+                    <default>false</default>
+                    <label>GridView</label>
+                </value>
+                <value>
+                    <fullName>LinkOne</fullName>
+                    <default>false</default>
+                    <label>LinkOne</label>
+                </value>
+                <value>
+                    <fullName>MineMarket</fullName>
+                    <default>false</default>
+                    <label>MineMarket</label>
+                </value>
+                <value>
+                    <fullName>MineScape</fullName>
+                    <default>false</default>
+                    <label>MineScape</label>
+                </value>
+                <value>
+                    <fullName>MMS</fullName>
+                    <default>false</default>
+                    <label>MMS</label>
+                </value>
+                <value>
+                    <fullName>nMarket</fullName>
+                    <default>false</default>
+                    <label>nMarket</label>
+                </value>
+                <value>
+                    <fullName>Nostradamus</fullName>
+                    <default>false</default>
+                    <label>Nostradamus</label>
+                </value>
+                <value>
+                    <fullName>OMS</fullName>
+                    <default>false</default>
+                    <label>OMS</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Portfolio Optimization</fullName>
+                    <default>false</default>
+                    <label>Portfolio Optimization</label>
+                </value>
+                <value>
+                    <fullName>Production Accounting</fullName>
+                    <default>false</default>
+                    <label>Production Accounting</label>
+                </value>
+                <value>
+                    <fullName>PROMOD</fullName>
+                    <default>false</default>
+                    <label>PROMOD</label>
+                </value>
+                <value>
+                    <fullName>SCADA</fullName>
+                    <default>false</default>
+                    <label>SCADA</label>
+                </value>
+                <value>
+                    <fullName>Sendout</fullName>
+                    <default>false</default>
+                    <label>Sendout</label>
+                </value>
+                <value>
+                    <fullName>Service Suite</fullName>
+                    <default>false</default>
+                    <label>Service Suite</label>
+                </value>
+                <value>
+                    <fullName>Simulation Data</fullName>
+                    <default>false</default>
+                    <label>Simulation Data</label>
+                </value>
+                <value>
+                    <fullName>Velocity Suite</fullName>
+                    <default>false</default>
+                    <label>Velocity Suite</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ProposalType__c</fullName>
+        <description>Budgetary or Firm, indicating which Proposal template to use.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Budgetary or Firm, indicating which Proposal template to use.</inlineHelpText>
+        <label>Proposal Type</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Budgetary</fullName>
+                    <default>true</default>
+                    <label>Budgetary</label>
+                </value>
+                <value>
+                    <fullName>Firm</fullName>
+                    <default>false</default>
+                    <label>Firm</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Quote_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Quote Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ServiceSectiononproposal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Service Section on proposal ?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SoftwareSection__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Software Section on proposal ?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Total_Customer_Price__c</fullName>
+        <description>Rollup summary of all Proposal Line Items extended price</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of all Proposal Line Items extended price</inlineHelpText>
+        <label>Total Customer Price</label>
+        <summarizedField>Apttus_Proposal__Proposal_Line_Item__c.Apttus_QPConfig__NetPrice__c</summarizedField>
+        <summaryFilterItems>
+            <field>Apttus_Proposal__Proposal_Line_Item__c.Apttus_QPConfig__PriceIncludedInBundle__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Apttus_Proposal__Proposal_Line_Item__c.Apttus_Proposal__Proposal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Net_Price_Software_section1__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( NOT(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;EUR&apos;)) ,If(
+(Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c)&gt;= 1000000, 
+TEXT(FLOOR((Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c)/ 1000000)) &amp; &quot;,&quot;, 
+&quot;&quot;) &amp; IF( 
+(Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c)&gt;= 1000, 
+RIGHT(TEXT(FLOOR((Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c)/ 1000)), 3) &amp; &quot;,&quot;, 
+&quot;&quot;) &amp; 
+RIGHT(TEXT(FLOOR((Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c))), 3) &amp; &quot;.&quot; &amp; 
+IF( 
+MOD((Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c), 1) * 100 &lt; 10, 
+&quot;0&quot; &amp; TEXT(ROUND(MOD((Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c), 1), 2) * 100), 
+TEXT(MIN(ROUND(MOD((Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c), 1), 2) * 100, 99)) 
+),&quot;&quot;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Net Price Software section1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Net_Price_Software_section__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;EUR&apos;),IF( 
+(Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c)&gt;= 1000000, 
+TEXT(FLOOR((Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c)/ 1000000)) &amp; &quot;.&quot;, 
+&quot;&quot;) &amp; IF( 
+(Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c)&gt;= 1000, 
+RIGHT(TEXT(FLOOR((Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c)/ 1000)), 3) &amp; &quot;.&quot;, 
+&quot;&quot;) &amp; 
+RIGHT(TEXT(FLOOR((Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c))), 3) &amp; &quot;,&quot; &amp; 
+IF( 
+MOD((Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c), 1) * 100 &lt; 10, 
+&quot;0&quot; &amp; TEXT(ROUND(MOD((Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c), 1), 2) * 100), 
+TEXT(MIN(ROUND(MOD((Total_Net_Price_for_License__c + Total_Net_Price_for_Maintenance__c+ Total_Net_Price_for_Saas__c+Net_Price_For_Hardware__c), 1), 2) * 100, 99)) 
+),&quot;&quot;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Net Price Software section</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Net_Price_for_Consulting_Managed_S__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;EUR&apos;),IF( 
+(Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c)&gt;= 1000000, 
+TEXT(FLOOR((Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c)/ 1000000)) &amp; &quot;.&quot;, 
+&quot;&quot;) &amp; IF( 
+(Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c)&gt;= 1000, 
+RIGHT(TEXT(FLOOR((Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c)/ 1000)), 3) &amp; &quot;.&quot;, 
+&quot;&quot;) &amp; 
+RIGHT(TEXT(FLOOR((Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c))), 3) &amp; &quot;,&quot; &amp; 
+IF( 
+MOD((Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c), 1) * 100 &lt; 10, 
+&quot;0&quot; &amp; TEXT(ROUND(MOD((Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c), 1), 2) * 100), 
+TEXT(MIN(ROUND(MOD((Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c), 1), 2) * 100, 99))
+),IF( 
+(Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c)&gt;= 1000000, 
+TEXT(FLOOR((Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c)/ 1000000)) &amp; &quot;,&quot;, 
+&quot;&quot;) &amp; IF( 
+(Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c)&gt;= 1000, 
+RIGHT(TEXT(FLOOR((Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c)/ 1000)), 3) &amp; &quot;,&quot;, 
+&quot;&quot;) &amp; 
+RIGHT(TEXT(FLOOR((Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c))), 3) &amp; &quot;.&quot; &amp; 
+IF( 
+MOD((Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c), 1) * 100 &lt; 10, 
+&quot;0&quot; &amp; TEXT(ROUND(MOD((Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c), 1), 2) * 100), 
+TEXT(MIN(ROUND(MOD((Total_Net_Price_for_Consulting__c + Total_Net_Price_for_Managed_Services__c), 1), 2) * 100, 99))
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Net Price for Consulting&amp;Managed S</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Net_Price_for_Consulting__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Net Price for Consulting</label>
+        <summarizedField>Apttus_Proposal__Proposal_Line_Item__c.Apttus_QPConfig__NetPrice__c</summarizedField>
+        <summaryFilterItems>
+            <field>Apttus_Proposal__Proposal_Line_Item__c.Revenue_Stream__c</field>
+            <operation>equals</operation>
+            <value>Consulting</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Apttus_Proposal__Proposal_Line_Item__c.Apttus_Proposal__Proposal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Net_Price_for_License__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Quote License Fees</label>
+        <summarizedField>Apttus_Proposal__Proposal_Line_Item__c.Apttus_QPConfig__NetPrice__c</summarizedField>
+        <summaryFilterItems>
+            <field>Apttus_Proposal__Proposal_Line_Item__c.Revenue_Stream__c</field>
+            <operation>equals</operation>
+            <value>Licenses</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Apttus_Proposal__Proposal_Line_Item__c.Apttus_Proposal__Proposal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Net_Price_for_Maintenance__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Quote Maintenance Fees</label>
+        <summarizedField>Apttus_Proposal__Proposal_Line_Item__c.Apttus_QPConfig__NetPrice__c</summarizedField>
+        <summaryFilterItems>
+            <field>Apttus_Proposal__Proposal_Line_Item__c.Revenue_Stream__c</field>
+            <operation>equals</operation>
+            <value>Maintenance</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Apttus_Proposal__Proposal_Line_Item__c.Apttus_Proposal__Proposal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Net_Price_for_Managed_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Quote Managed Services Fees</label>
+        <summarizedField>Apttus_Proposal__Proposal_Line_Item__c.Apttus_QPConfig__NetPrice__c</summarizedField>
+        <summaryFilterItems>
+            <field>Apttus_Proposal__Proposal_Line_Item__c.Revenue_Stream__c</field>
+            <operation>equals</operation>
+            <value>Managed Services</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Apttus_Proposal__Proposal_Line_Item__c.Apttus_Proposal__Proposal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Net_Price_for_Saas__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Quote SaaS Fees</label>
+        <summarizedField>Apttus_Proposal__Proposal_Line_Item__c.Apttus_QPConfig__NetPrice__c</summarizedField>
+        <summaryFilterItems>
+            <field>Apttus_Proposal__Proposal_Line_Item__c.Revenue_Stream__c</field>
+            <operation>equals</operation>
+            <value>SaaS</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Apttus_Proposal__Proposal_Line_Item__c.Apttus_Proposal__Proposal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Total_Quote_PSO_Fees__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Quote PSO Fees</label>
+        <summarizedField>Apttus_Proposal__Proposal_Line_Item__c.Apttus_QPConfig__NetPrice__c</summarizedField>
+        <summaryFilterItems>
+            <field>Apttus_Proposal__Proposal_Line_Item__c.Revenue_Stream__c</field>
+            <operation>equals</operation>
+            <value>Consulting</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Apttus_Proposal__Proposal_Line_Item__c.Apttus_Proposal__Proposal__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>currency_Symbol_for_Template__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;AUD&apos;),&apos;$&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;GBP&apos;),&apos;£&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;BHD&apos;),&apos;.د.ب&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;BRL&apos;),&apos;R$&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;BND&apos;),&apos;B$&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;CAD&apos;),&apos;C$&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;CNY&apos;),&apos;¥&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;CLP&apos;),&apos;$&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;COP&apos;),&apos;$&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;CZK&apos;),&apos;Kč&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;DKK&apos;),&apos;kr&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;GHS&apos;),&apos;GHS&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;IDR&apos;),&apos;Rp&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;KZT&apos;),&apos;KZT&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;KWD&apos;),&apos;د.ك&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;KGS&apos;),&apos;KGS&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;MYR&apos;),&apos;RM&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;MXN&apos;),&apos;$&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;NZD&apos;),&apos;$&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;NOK&apos;),&apos;kr&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;PEN&apos;),&apos;S/.&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;PLN&apos;),&apos;zł&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;QAR&apos;),&apos;ر.ق&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;RON&apos;),&apos;L&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;RUB&apos;),&apos;руб&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;CHF&apos;),&apos;CHF&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;SAR&apos;),&apos;ر.س&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;SGD&apos;),&apos;S$&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;ZAR&apos;),&apos;R&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;SEK&apos;),&apos;kr&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;TRL&apos;),&apos;YTL&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;USD&apos;),&apos;$&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;AED&apos;),&apos;د.إ&apos;,
+IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;JPY&apos;), &apos;¥&apos;,
+&apos;&apos;))))))))))))))))))))))))))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>currency Symbol for Template</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>currency_symbol_for_euro__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Apttus_Proposal__Opportunity__r.CurrencyIsoCode ,&apos;EUR&apos;),&apos;€&apos;,&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>currency symbol for euro</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>
